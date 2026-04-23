@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <title>简历投递追踪器</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; background-color: #f5f5f7; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #1d1d1f; border-bottom: 2px solid #007aff; padding-bottom: 10px; }
+        .form-group { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        input, select, button { padding: 8px 12px; border: 1px solid #d2d2d7; border-radius: 6px; font-size: 14px; }
+        button { background-color: #007aff; color: white; border: none; cursor: pointer; transition: background 0.2s; }
+        button:hover { background-color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #f0f0f0; }
+        th { background-color: #fbfbfd; color: #86868b; font-weight: 500; }
+        .status-tag { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-interview { background: #cce5ff; color: #004085; }
+        .status-rejected { background: #f8d7da; color: #721c24; }
+        .status-offer { background: #d4edda; color: #155724; }
+        .delete-btn { color: #ff3b30; cursor: pointer; font-size: 12px; margin-left: 10px; }
+    </style>
+</head>
+<body style="overflow-wrap: break-word; -webkit-nbsp-mode: space; line-break: after-white-space;">
+
+<div class="container">
+    <h2>🚀 简历投递追踪</h2>
+    
+    <div class="form-group">
+        <input type="text" id="company" placeholder="公司名称">
+        <input type="text" id="position" placeholder="职位名称">
+        <input type="date" id="date" value="2026-02-19">
+        <button onclick="addEntry()">添加记录</button>
+    </div>
+
+    <table id="trackerTable">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>公司</th>
+                <th>职位</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"><tr>
+                <td>2026-02-19</td>
+                <td>Amazon</td>
+                <td>Senior Creative Producer</td>
+                <td>
+                    <select onchange="updateStatus(0, this.value)">
+                        <option value="待响应" selected="">⏳ 待响应</option>
+                        <option value="面试中">📅 面试中</option>
+                        <option value="已拒绝">❌ 已拒绝</option>
+                        <option value="录用">🎉 录用</option>
+                    </select>
+                </td>
+                <td><span class="delete-btn" onclick="deleteEntry(0)">删除</span></td>
+            </tr><tr>
+                <td>2026-02-19</td>
+                <td>Amazon</td>
+                <td>Director Audible</td>
+                <td>
+                    <select onchange="updateStatus(1, this.value)">
+                        <option value="待响应" selected="">⏳ 待响应</option>
+                        <option value="面试中">📅 面试中</option>
+                        <option value="已拒绝">❌ 已拒绝</option>
+                        <option value="录用">🎉 录用</option>
+                    </select>
+                </td>
+                <td><span class="delete-btn" onclick="deleteEntry(1)">删除</span></td>
+            </tr></tbody>
+    </table>
+</div>
+
+<script>
+    let records = JSON.parse(localStorage.getItem('job_tracker_data')) || [];
+
+    function renderTable() {
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = '';
+        
+        records.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach((item, index) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${item.date}</td>
+                <td>${item.company}</td>
+                <td>${item.position}</td>
+                <td>
+                    <select onchange="updateStatus(${index}, this.value)">
+                        <option value="待响应" ${item.status === '待响应' ? 'selected' : ''}>⏳ 待响应</option>
+                        <option value="面试中" ${item.status === '面试中' ? 'selected' : ''}>📅 面试中</option>
+                        <option value="已拒绝" ${item.status === '已拒绝' ? 'selected' : ''}>❌ 已拒绝</option>
+                        <option value="录用" ${item.status === '录用' ? 'selected' : ''}>🎉 录用</option>
+                    </select>
+                </td>
+                <td><span class="delete-btn" onclick="deleteEntry(${index})">删除</span></td>
+            `;
+            tbody.appendChild(tr);
+        });
+        localStorage.setItem('job_tracker_data', JSON.stringify(records));
+    }
+
+    function addEntry() {
+        const company = document.getElementById('company').value;
+        const position = document.getElementById('position').value;
+        const date = document.getElementById('date').value || new Date().toISOString().split('T')[0];
+
+        if (!company || !position) {
+            alert("请填写公司和职位信息");
+            return;
+        }
+
+        records.push({ company, position, date, status: '待响应' });
+        renderTable();
+        
+        // 清空输入
+        document.getElementById('company').value = '';
+        document.getElementById('position').value = '';
+    }
+
+    function updateStatus(index, newStatus) {
+        records[index].status = newStatus;
+        localStorage.setItem('job_tracker_data', JSON.stringify(records));
+    }
+
+    function deleteEntry(index) {
+        if(confirm('确定要删除这条记录吗？')) {
+            records.splice(index, 1);
+            renderTable();
+        }
+    }
+
+    // 初始化日期为今天并渲染表格
+    document.getElementById('date').value = new Date().toISOString().split('T')[0];
+    renderTable();
+</script>
+
+
+</body></html>

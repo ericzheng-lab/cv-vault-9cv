@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generated_at": "2026-04-06T20:02:27.526206",
+    "source": "/Users/drs/Documents/Obsidian-Vault/9_CV/01-MASTER/resume-master.html",
+    "canonical": true,
+    "experience_count": 6,
+    "bullet_count": 11
+  },
+  "experiences": [
+    {
+      "id": "exp-01",
+      "company": "First Light Films",
+      "title": "Founder & Executive Producer",
+      "period": "Jul 2017 — Dec 2025",
+      "location": "Shanghai / Global",
+      "type": "film",
+      "bullets": [
+        {
+          "id": "exp-01-01",
+          "title": "0-to-1 Venture Architecture:",
+          "text": "Built and scaled an independent creative studio from the ground up. Architected the foundational operational, legal, and financial structures required to sustain high-stakes cross-border cinematic productions.",
+          "tags": [
+            "film",
+            "legal",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-01-02",
+          "title": "International Capital Orchestration:",
+          "text": "Engineered a complex multi-territory financing strategy, securing a $2.5M+ USD production budget. This included over €400k in prestige grants from the CNC World Cinema Fund (€120k), TorinoFilmLab (€50k), Ile-de-France, and Doha Film Institute (DFI).",
+          "tags": [
+            "film",
+            "financing",
+            "international"
+          ],
+          "metrics": [
+            "$2.5M+",
+            "€400k",
+            "€120k",
+            "€50k"
+          ]
+        },
+        {
+          "id": "exp-01-03",
+          "title": "High-Stakes Legal & Compliance:",
+          "text": "Owned the full Chain of Title and global legal delivery. Negotiated and finalized distribution agreements with Films Boutique (International) and Tandem Films (France), resolving complex TV rights disputes in MENA via supplemental legal amendments.",
+          "tags": [
+            "film",
+            "legal",
+            "international"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-01-04",
+          "title": "Technical Mastering & Regulatory Affairs:",
+          "text": "Directed a three-country production pipeline. Performed rigorous Technical QC on 4.5K masters, personally auditing pixel errors and blanking mistakes in ProRes 4444 XYZ / TIFF sequences to meet Tier-1 theatrical specs. Successfully secured a $150k USD Provincial Arts Fund.",
+          "tags": [
+            "film",
+            "financing",
+            "post_production",
+            "leadership"
+          ],
+          "metrics": [
+            "$150"
+          ]
+        }
+      ],
+      "source": "resume-master.html"
+    },
+    {
+      "id": "exp-02",
+      "company": "Final Frontier (Hybrid Creative Agency)",
+      "title": "Executive Producer (Strategic Project Lead)",
+      "period": "Jul 2023 — Dec 2024",
+      "location": "Shanghai / Global",
+      "type": "commercial",
+      "bullets": [
+        {
+          "id": "exp-02-01",
+          "title": "S-Tier IP Portfolio Ownership:",
+          "text": "Directed high-end CG and animation production for the world's most valuable gaming franchises, including League of Legends (Riot Games), DNF (Tencent), Honor of Kings, and miHoYo’s Genshin Impact / ZZZ.",
+          "tags": [
+            "gaming",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-02-02",
+          "title": "DTC Revenue Transformation:",
+          "text": "Generated $6M+ USD in portfolio revenue within 18 months by pivoting the studio from a traditional vendor model to a Direct-to-Client (DTC) Hybrid Agency model. Led upstream creative pitching and downstream execution for multi-million dollar SOWs.",
+          "tags": [
+            "financing",
+            "commercial",
+            "leadership"
+          ],
+          "metrics": [
+            "$6M+"
+          ]
+        },
+        {
+          "id": "exp-02-03",
+          "title": "Global Studio Orchestration:",
+          "text": "Directed operations for a globally distributed network of elite studios (e.g., Le Cube), resolving cross-timezone friction and language barriers. Mentored a team of producers to maintain a culture of extreme ownership and zero-error delivery.",
+          "tags": [
+            "international",
+            "operations",
+            "leadership"
+          ],
+          "metrics": null
+        }
+      ],
+      "source": "resume-master.html"
+    },
+    {
+      "id": "exp-03",
+      "company": "Final Frontier",
+      "title": "Lead Producer",
+      "period": "Apr 2022 — Jul 2023",
+      "location": "Shanghai",
+      "type": "general",
+      "bullets": [
+        {
+          "id": "exp-03-01",
+          "title": "Operational Throughput & Efficiency:",
+          "text": "Managed concurrent delivery of 10+ premium integrated campaigns annually for Nike, BMW, vivo, NetEase, and POP MART. Optimized SOPs using Jira/Asana, reducing production cycle time by 15% while maintaining \"bar-raising\" quality standards.",
+          "tags": [
+            "commercial",
+            "operations",
+            "leadership"
+          ],
+          "metrics": [
+            "10+",
+            "15%"
+          ]
+        }
+      ],
+      "source": "resume-master.html"
+    },
+    {
+      "id": "exp-04",
+      "company": "IK DESIGN Experiential & Spatial Design",
+      "title": "Project Lead (Experiential Production)",
+      "period": "Jul 2017 — Dec 2018",
+      "location": "Shanghai",
+      "type": "general",
+      "bullets": [
+        {
+          "id": "exp-04-01",
+          "title": "Physical Build & Execution Ownership:",
+          "text": "Managed end-to-end production for physical activations ($150k - $2M budgets). Controlled complex fabrication pipelines and material sourcing for luxury brand retail and event spaces.",
+          "tags": [
+            "financing",
+            "commercial",
+            "leadership",
+            "experiential"
+          ],
+          "metrics": [
+            "$150",
+            "$2M"
+          ]
+        }
+      ],
+      "source": "resume-master.html"
+    },
+    {
+      "id": "exp-05",
+      "company": "D'ELE Management & Production",
+      "title": "Head of Production Operations",
+      "period": "Oct 2015 — Jul 2017",
+      "location": "Shanghai",
+      "type": "operations",
+      "bullets": [
+        {
+          "id": "exp-05-01",
+          "title": "0-to-1 Business Scaling:",
+          "text": "Launched and scaled the agency's internal content division to $1.5M+ revenue in year one. Established foundational financial workflows, vendor compliance protocols, and client billing visibility.",
+          "tags": [
+            "financing",
+            "legal",
+            "commercial",
+            "operations",
+            "leadership"
+          ],
+          "metrics": [
+            "$1.5M+"
+          ]
+        }
+      ],
+      "source": "resume-master.html"
+    },
+    {
+      "id": "exp-06",
+      "company": "Ker Sound Studios",
+      "title": "Studio Operations Manager",
+      "period": "Jul 2012 — Jul 2015",
+      "location": "Shanghai",
+      "type": "operations",
+      "bullets": [
+        {
+          "id": "exp-06-01",
+          "title": "AAA Asset Delivery:",
+          "text": "Supervised 200+ hours of localized assets for AAA gaming titles (including Monster Hunter Online). Acted as the strategic liaison between European leadership and local clients to ensure world-class technical standards.",
+          "tags": [
+            "international",
+            "gaming",
+            "commercial",
+            "audio"
+          ],
+          "metrics": [
+            "200+"
+          ]
+        }
+      ],
+      "source": "resume-master.html"
+    }
+  ]
+}

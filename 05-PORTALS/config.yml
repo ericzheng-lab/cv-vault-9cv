@@ -1,0 +1,183 @@
+# Film & Entertainment Industry Portal Scanner Config
+# Customized for Eric Zheng - Film Producer targeting Netflix, Amazon Studios, Apple TV+, etc.
+
+title_filter:
+  positive:
+    # Film/TV Production
+    - "Executive Producer"
+    - "Head of Production"
+    - "VP of Production"
+    - "Director of Production"
+    - "Senior Producer"
+    - "Line Producer"
+    - "Unit Production Manager"
+    - "Production Manager"
+    # Creative
+    - "Creative Director"
+    - "Creative Producer"
+    - "Creative Executive"
+    - "Head of Content"
+    - "VP of Content"
+    - "Director of Content"
+    - "Content Development"
+    # Production & Operations
+    - "Production Executive"
+    - "Studio Operations"
+    - "Production Management"
+    - "Post-Production"
+    - "VP of Operations"
+    - "Director of Operations"
+    # Business Affairs
+    - "Business Affairs"
+    - "Physical Production"
+    - "Production Finance"
+  negative:
+    - "Junior"
+    - "Intern"
+    - "Coordinator"
+    - "Assistant"
+    - "Engineer"
+    - "Developer"
+    - "Software"
+    - "Data Analyst"
+    - "Accountant"
+    - "HR"
+    - "Recruiter"
+  seniority_boost:
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Head"
+    - "Director"
+    - "VP"
+    - "Executive"
+
+search_queries:
+  - name: Netflix Careers - Production
+    query: 'site:jobs.netflix.com "Executive Producer" OR "Head of Production" OR "Senior Producer"'
+    enabled: true
+
+  - name: Amazon Studios - Production
+    query: 'site:amazon.jobs "Executive Producer" OR "Head of Production" OR "Creative Director" studios'
+    enabled: true
+
+  - name: Apple TV+ - Production
+    query: 'site:apple.com/jobs "Executive Producer" OR "Head of Production" "Apple TV"'
+    enabled: true
+
+  - name: Disney - Production
+    query: 'site:disneycareers.com "Executive Producer" OR "VP Production" OR "Head of Production"'
+    enabled: true
+
+  - name: NBCUniversal - Production
+    query: 'site:nbcuniversal.com "Executive Producer" OR "VP Production" OR "Director Production"'
+    enabled: true
+
+  - name: Warner Bros - Production
+    query: 'site:warnerbroscareers.com "Executive Producer" OR "Head of Production" OR "Production Executive"'
+    enabled: true
+
+  - name: Paramount - Production
+    query: 'site:paramountcareers.com "Executive Producer" OR "VP Production" OR "Head of Content"'
+    enabled: true
+
+  - name: A24 - Production
+    query: 'site:a24.jobs OR site:linkedin.com/jobs "Executive Producer" OR "Head of Production" A24'
+    enabled: true
+
+  - name: MTV Entertainment - Production
+    query: 'site:viacomcbscareers.com "Executive Producer" OR "VP Production" OR "Content Development"'
+    enabled: true
+
+  - name: Bloomberg Media - Production
+    query: 'site:bloomberg.com/careers "Executive Producer" OR "Head of Production" OR "Content"'
+    enabled: true
+
+  - name: Vox Media - Production
+    query: 'site:voxmedia.com "Executive Producer" OR "Head of Production" OR "VP Content"'
+    enabled: true
+
+  - name: The Athletic - Production
+    query: '"Executive Producer" OR "Head of Production" "The Athletic" OR "New York Times"'
+    enabled: true
+
+tracked_companies:
+  - name: "Netflix"
+    careers_url: "https://jobs.netflix.com"
+    enabled: true
+  - name: "Amazon Studios"
+    careers_url: "https://www.amazon.jobs/en/business_categories/studio"
+    enabled: true
+  - name: "Apple TV+"
+    careers_url: "https://www.apple.com/jobs/us/categories/tv-and-film.html"
+    enabled: true
+  - name: "Disney"
+    careers_url: "https://www.disneycareers.com"
+    enabled: true
+  - name: "NBCUniversal"
+    careers_url: "https://www.nbcuniversal.com/careers"
+    enabled: true
+  - name: "Warner Bros Discovery"
+    careers_url: "https://www.warnerbroscareers.com"
+    enabled: true
+  - name: "Paramount"
+    careers_url: "https://www.paramountcareers.com"
+    enabled: true
+  - name: "A24"
+    careers_url: "https://a24.jobs"
+    enabled: true
+  - name: "MTV Entertainment Group"
+    careers_url: "https://www.viacomcbscareers.com"
+    enabled: true
+  - name: "Vox Media"
+    careers_url: "https://www.voxmedia.com/careers"
+    enabled: true
+  - name: "Bloomberg Media"
+    careers_url: "https://www.bloomberg.com/careers"
+    enabled: true
+  - name: "Dotdash Meredith"
+    careers_url: "https://www.dotdashmeredith.com/careers"
+    enabled: true
+
+# Entertainment Marketing & Ad Agencies
+marketing_companies:
+  - name: "Warner Bros. Clockwork"
+    careers_url: "https://www.warnerbroscareers.com (Clockwork Creative Team)"
+    enabled: true
+  - name: "Intermission Film"
+    careers_url: "https://careers.intermissionfilm.com"
+    enabled: true
+  - name: "WPP"
+    careers_url: "https://www.wpp.com/careers"
+    enabled: true
+  - name: "Publicis"
+    careers_url: "https://www.publicis.com/careers"
+    enabled: true
+  - name: "Dentsu"
+    careers_url: "https://www.dentsu.com/careers"
+    enabled: true
+  - name: "OMD"
+    careers_url: "https://www.omd.com/careers"
+    enabled: true
+  - name: "Horizon Media"
+    careers_url: "https://www.horizonmedia.com/careers"
+    enabled: true
+  - name: "Mighty Hive"
+    careers_url: "https://www.mightyhive.com/careers"
+    enabled: true
+
+# Film & TV Production Companies
+film_production_companies:
+  - name: "Sony Pictures Entertainment"
+    careers_url: "https://www.sonypictures.com/careers"
+    enabled: true
+  - name: "Lionsgate"
+    careers_url: "https://www.lionsgate.com/careers"
+    enabled: true
+  - name: "STX Entertainment"
+    careers_url: "https://www.stxfilms.com/careers"
+    enabled: true
+  - name: "MGM"
+    careers_url: "https://www.mgm.com/careers"
+    enabled: true

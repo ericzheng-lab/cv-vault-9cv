@@ -1,0 +1,967 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generated_at": "2026-04-06T20:56:05.388576",
+    "source": [
+      "canonical-experiences.json",
+      "Eric-Database.json"
+    ],
+    "experience_count": 6,
+    "master_bullet_count": 11,
+    "extra_bullet_count": 41,
+    "total_bullet_count": 34,
+    "refined_at": "2026-04-06T21:02:09.149268",
+    "moved_counts": {
+      "to_lead_producer": 1,
+      "to_ik_design": 0,
+      "to_dele": 1,
+      "to_ker_sound": 4
+    },
+    "refined_round2_at": "2026-04-06T22:02:22.181995",
+    "round2_moves": {
+      "to_project_pool": 18,
+      "to_lead_producer": 0,
+      "to_ik_design": 0,
+      "to_dele": 0,
+      "to_ker_sound": 0,
+      "to_first_light": 2,
+      "kept_strategic_ep": 4,
+      "unknown_kept_ff": 9
+    }
+  },
+  "experiences": [
+    {
+      "id": "exp-01",
+      "company": "First Light Films",
+      "title": "Founder & Executive Producer",
+      "period": "Jul 2017 — Dec 2025",
+      "location": "Shanghai / Global",
+      "type": "film",
+      "master_bullets": [
+        {
+          "id": "exp-01-01",
+          "title": "0-to-1 Venture Architecture:",
+          "text": "Built and scaled an independent creative studio from the ground up. Architected the foundational operational, legal, and financial structures required to sustain high-stakes cross-border cinematic productions.",
+          "tags": [
+            "film",
+            "legal",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-01-02",
+          "title": "International Capital Orchestration:",
+          "text": "Engineered a complex multi-territory financing strategy, securing a $2.5M+ USD production budget. This included over €400k in prestige grants from the CNC World Cinema Fund (€120k), TorinoFilmLab (€50k), Ile-de-France, and Doha Film Institute (DFI).",
+          "tags": [
+            "film",
+            "financing",
+            "international"
+          ],
+          "metrics": [
+            "$2.5M+",
+            "€400k",
+            "€120k",
+            "€50k"
+          ]
+        },
+        {
+          "id": "exp-01-03",
+          "title": "High-Stakes Legal & Compliance:",
+          "text": "Owned the full Chain of Title and global legal delivery. Negotiated and finalized distribution agreements with Films Boutique (International) and Tandem Films (France), resolving complex TV rights disputes in MENA via supplemental legal amendments.",
+          "tags": [
+            "film",
+            "legal",
+            "international"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-01-04",
+          "title": "Technical Mastering & Regulatory Affairs:",
+          "text": "Directed a three-country production pipeline. Performed rigorous Technical QC on 4.5K masters, personally auditing pixel errors and blanking mistakes in ProRes 4444 XYZ / TIFF sequences to meet Tier-1 theatrical specs. Successfully secured a $150k USD Provincial Arts Fund.",
+          "tags": [
+            "film",
+            "financing",
+            "post_production",
+            "leadership"
+          ],
+          "metrics": [
+            "$150"
+          ]
+        }
+      ],
+      "extra_bullets": [
+        {
+          "id": "fir-1",
+          "title": "Led Global Co-Production Financing:",
+          "text": "Architected the $2.5M financing structure for the feature film _Brief History of A Family_, successfully pitching and securing top-tier international funds including the French CNC (Aides aux Cinémas du Monde), Ile-de-France regional fund (€115K), Doha Film Institute (DFI) Post-Production Grant, and TorinoFilmLab (TFL) Co-Production Award (€50K).",
+          "tags": [
+            "film",
+            "financing",
+            "international",
+            "post_production",
+            "ai"
+          ],
+          "metrics": [
+            "$2.5M",
+            "115K",
+            "50K"
+          ],
+          "source": "legacy"
+        },
+        {
+          "id": "fir-2",
+          "title": "Navigated Entertainment Law & Legal Delivery:",
+          "text": "Solely negotiated and executed complex international sales and distribution contracts with European agencies (Films Boutique, Tandem Films). Managed rigorous Legal Delivery, clearing Chain of Title, music cue sheets, and resolving multi-jurisdictional copyright disputes.",
+          "tags": [
+            "film",
+            "legal",
+            "international",
+            "leadership",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fir-3",
+          "title": "Directed Technical Post-Production:",
+          "text": "Coordinated a tri-nation (China, Denmark, France) post-production pipeline. Personally QC'd and managed the mastering of DCPs, KDMs, and ProRes 4444 XYZ / TIFF sequences, aggressively resolving pixel errors and blanking mistakes with European labs (Beopost, Saya/Yellow Cab).",
+          "tags": [
+            "legal",
+            "international",
+            "post_production",
+            "leadership"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fir-4",
+          "title": "Managed Censorship & Gov Relations (China):",
+          "text": "Maneuvered through China’s stringent censorship system, successfully orchestrating a cross-provincial project transfer (from Sichuan to Zhejiang Film Bureau) to secure the \"Dragon Mark\" (Public Screening License) and a 1M RMB local government cultural grant.",
+          "tags": [
+            "film",
+            "legal",
+            "international",
+            "leadership"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fir-5",
+          "title": "Established Corporate IT & ERP Infrastructure:",
+          "text": "Built the company's operational backbone from scratch, deploying Zoho (CRM/Finance), Trello, and Monday.com to standardize cross-currency budgeting, HR, and international auditing compliance.",
+          "tags": [
+            "financing",
+            "international",
+            "operations"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-25",
+          "title": "Commercial & Legal:",
+          "text": "Entertainment Law (Contracts, Chain of Title, IP Clearance), Budgeting & P&L Management, SOW & Margin Optimization, Government Subsidy Applications.",
+          "tags": [
+            "financing",
+            "legal",
+            "commercial",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-26",
+          "title": "Risk & Gov Relations:",
+          "text": "Chinese Censorship Clearance (Dragon Mark), Crisis Management, Cross-cultural Conflict Resolution. **Tools & Software:**",
+          "tags": [
+            "legal"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ],
+      "all_bullets": [
+        {
+          "id": "exp-01-01",
+          "title": "0-to-1 Venture Architecture:",
+          "text": "Built and scaled an independent creative studio from the ground up. Architected the foundational operational, legal, and financial structures required to sustain high-stakes cross-border cinematic productions.",
+          "tags": [
+            "film",
+            "legal",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-01-02",
+          "title": "International Capital Orchestration:",
+          "text": "Engineered a complex multi-territory financing strategy, securing a $2.5M+ USD production budget. This included over €400k in prestige grants from the CNC World Cinema Fund (€120k), TorinoFilmLab (€50k), Ile-de-France, and Doha Film Institute (DFI).",
+          "tags": [
+            "film",
+            "financing",
+            "international"
+          ],
+          "metrics": [
+            "$2.5M+",
+            "€400k",
+            "€120k",
+            "€50k"
+          ]
+        },
+        {
+          "id": "exp-01-03",
+          "title": "High-Stakes Legal & Compliance:",
+          "text": "Owned the full Chain of Title and global legal delivery. Negotiated and finalized distribution agreements with Films Boutique (International) and Tandem Films (France), resolving complex TV rights disputes in MENA via supplemental legal amendments.",
+          "tags": [
+            "film",
+            "legal",
+            "international"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-01-04",
+          "title": "Technical Mastering & Regulatory Affairs:",
+          "text": "Directed a three-country production pipeline. Performed rigorous Technical QC on 4.5K masters, personally auditing pixel errors and blanking mistakes in ProRes 4444 XYZ / TIFF sequences to meet Tier-1 theatrical specs. Successfully secured a $150k USD Provincial Arts Fund.",
+          "tags": [
+            "film",
+            "financing",
+            "post_production",
+            "leadership"
+          ],
+          "metrics": [
+            "$150"
+          ]
+        },
+        {
+          "id": "fir-1",
+          "title": "Led Global Co-Production Financing:",
+          "text": "Architected the $2.5M financing structure for the feature film _Brief History of A Family_, successfully pitching and securing top-tier international funds including the French CNC (Aides aux Cinémas du Monde), Ile-de-France regional fund (€115K), Doha Film Institute (DFI) Post-Production Grant, and TorinoFilmLab (TFL) Co-Production Award (€50K).",
+          "tags": [
+            "film",
+            "financing",
+            "international",
+            "post_production",
+            "ai"
+          ],
+          "metrics": [
+            "$2.5M",
+            "115K",
+            "50K"
+          ],
+          "source": "legacy"
+        },
+        {
+          "id": "fir-2",
+          "title": "Navigated Entertainment Law & Legal Delivery:",
+          "text": "Solely negotiated and executed complex international sales and distribution contracts with European agencies (Films Boutique, Tandem Films). Managed rigorous Legal Delivery, clearing Chain of Title, music cue sheets, and resolving multi-jurisdictional copyright disputes.",
+          "tags": [
+            "film",
+            "legal",
+            "international",
+            "leadership",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fir-3",
+          "title": "Directed Technical Post-Production:",
+          "text": "Coordinated a tri-nation (China, Denmark, France) post-production pipeline. Personally QC'd and managed the mastering of DCPs, KDMs, and ProRes 4444 XYZ / TIFF sequences, aggressively resolving pixel errors and blanking mistakes with European labs (Beopost, Saya/Yellow Cab).",
+          "tags": [
+            "legal",
+            "international",
+            "post_production",
+            "leadership"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fir-4",
+          "title": "Managed Censorship & Gov Relations (China):",
+          "text": "Maneuvered through China’s stringent censorship system, successfully orchestrating a cross-provincial project transfer (from Sichuan to Zhejiang Film Bureau) to secure the \"Dragon Mark\" (Public Screening License) and a 1M RMB local government cultural grant.",
+          "tags": [
+            "film",
+            "legal",
+            "international",
+            "leadership"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fir-5",
+          "title": "Established Corporate IT & ERP Infrastructure:",
+          "text": "Built the company's operational backbone from scratch, deploying Zoho (CRM/Finance), Trello, and Monday.com to standardize cross-currency budgeting, HR, and international auditing compliance.",
+          "tags": [
+            "financing",
+            "international",
+            "operations"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-25",
+          "title": "Commercial & Legal:",
+          "text": "Entertainment Law (Contracts, Chain of Title, IP Clearance), Budgeting & P&L Management, SOW & Margin Optimization, Government Subsidy Applications.",
+          "tags": [
+            "financing",
+            "legal",
+            "commercial",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-26",
+          "title": "Risk & Gov Relations:",
+          "text": "Chinese Censorship Clearance (Dragon Mark), Crisis Management, Cross-cultural Conflict Resolution. **Tools & Software:**",
+          "tags": [
+            "legal"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ]
+    },
+    {
+      "id": "exp-02",
+      "company": "Final Frontier (Hybrid Creative Agency)",
+      "title": "Executive Producer (Strategic Project Lead)",
+      "period": "Jul 2023 — Dec 2024",
+      "location": "Shanghai / Global",
+      "type": "commercial",
+      "master_bullets": [
+        {
+          "id": "exp-02-01",
+          "title": "S-Tier IP Portfolio Ownership:",
+          "text": "Directed high-end CG and animation production for the world's most valuable gaming franchises, including League of Legends (Riot Games), DNF (Tencent), Honor of Kings, and miHoYo’s Genshin Impact / ZZZ.",
+          "tags": [
+            "gaming",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "exp-02-02",
+          "title": "DTC Revenue Transformation:",
+          "text": "Generated $6M+ USD in portfolio revenue within 18 months by pivoting the studio from a traditional vendor model to a Direct-to-Client (DTC) Hybrid Agency model. Led upstream creative pitching and downstream execution for multi-million dollar SOWs.",
+          "tags": [
+            "financing",
+            "commercial",
+            "leadership"
+          ],
+          "metrics": [
+            "$6M+"
+          ]
+        },
+        {
+          "id": "exp-02-03",
+          "title": "Global Studio Orchestration:",
+          "text": "Directed operations for a globally distributed network of elite studios (e.g., Le Cube), resolving cross-timezone friction and language barriers. Mentored a team of producers to maintain a culture of extreme ownership and zero-error delivery.",
+          "tags": [
+            "international",
+            "operations",
+            "leadership"
+          ],
+          "metrics": null
+        }
+      ],
+      "extra_bullets": [
+        {
+          "id": "fin-1",
+          "title": "Speheaded S-Tier Commercial & CG Animation Pipelines:",
+          "text": "Led the end-to-end production of multi-million RMB/USD campaigns for top-tier global brands and tech/gaming giants (Tencent, Riot Games, miHoYo, Nike, L'Oreal).",
+          "tags": [
+            "legal",
+            "international",
+            "gaming",
+            "commercial",
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-2",
+          "title": "Managed Global Vendor Ecosystems:",
+          "text": "Bridged the gap between demanding Chinese clients and elite international animation/VFX studios (e.g., Le Cube, Serial Cut). Translated complex, high-pressure client briefs into actionable creative directives for artists across Europe and South America.",
+          "tags": [
+            "international",
+            "leadership",
+            "cg_animation"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-3",
+          "title": "Drove P&L and Commercial Scoping (SOW):",
+          "text": "Owned the bidding, budgeting, and margin optimization process. Successfully negotiated Statements of Work (SOW) and delivery schedules, ensuring healthy cash flow and profitability for high-volume, concurrent workstreams.",
+          "tags": [
+            "financing",
+            "commercial"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-24",
+          "title": "Production & Operations:",
+          "text": "Global Workstream Operations, Integrated Campaign Delivery, Cross-border Co-production, Post-Production Mastering, Vendor & Talent Procurement.",
+          "tags": [
+            "international",
+            "post_production",
+            "commercial",
+            "operations",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-28",
+          "title": "Finance & ERP:",
+          "text": "Movie Magic Budgeting, Advanced Excel/Numbers.",
+          "tags": [
+            "film",
+            "financing",
+            "operations"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-29",
+          "title": "Creative & Post-Production:",
+          "text": "Adobe Creative Suite (Premiere Pro, After Effects, Illustrator), Figma.",
+          "tags": [
+            "post_production"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-30",
+          "title": "AI Integration:",
+          "text": "Openclaw, Google Gemini, Midjourney, various AI-driven localization and workflow automation tools. Runway, Higgsfield, Veo, Nano Banana **Languages:**",
+          "tags": [
+            "legal",
+            "operations",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-31",
+          "title": "Chinese (Mandarin):",
+          "text": "Native",
+          "tags": [],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-32",
+          "title": "English:",
+          "text": "Fluent (Full Professional/Academic Proficiency - highly adept at drafting complex legal amendments, pitch decks, and technical production briefs).",
+          "tags": [
+            "legal"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-35",
+          "title": "FMCG & Lifestyle:",
+          "text": "Nike, Heineken, Durex, Spotify, Zhiben (至本), Airbnb, Ritz Carlton, Crocs.",
+          "tags": [
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-36",
+          "title": "Agencies :",
+          "text": "AKQA, BBH, VMLY&R, Publicis (Prodigious), Isobar, M&C Saatchi, Havas. Here is the comprehensive and professionally formatted Key Project List & Case Studies for Eric Zheng, detailing 11 major projects across international feature films, global commercial campaigns, and top-tier gaming cinematics.",
+          "tags": [
+            "film",
+            "international",
+            "gaming",
+            "commercial",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ],
+      "all_bullets": [
+        {
+          "id": "exp-02-02",
+          "title": "DTC Revenue Transformation:",
+          "text": "Generated $6M+ USD in portfolio revenue within 18 months by pivoting the studio from a traditional vendor model to a Direct-to-Client (DTC) Hybrid Agency model. Led upstream creative pitching and downstream execution for multi-million dollar SOWs.",
+          "tags": [
+            "financing",
+            "commercial",
+            "leadership"
+          ],
+          "metrics": [
+            "$6M+"
+          ]
+        },
+        {
+          "id": "exp-02-03",
+          "title": "Global Studio Orchestration:",
+          "text": "Directed operations for a globally distributed network of elite studios (e.g., Le Cube), resolving cross-timezone friction and language barriers. Mentored a team of producers to maintain a culture of extreme ownership and zero-error delivery.",
+          "tags": [
+            "international",
+            "operations",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-1",
+          "title": "Speheaded S-Tier Commercial & CG Animation Pipelines:",
+          "text": "Led the end-to-end production of multi-million RMB/USD campaigns for top-tier global brands and tech/gaming giants (Tencent, Riot Games, miHoYo, Nike, L'Oreal).",
+          "tags": [
+            "legal",
+            "international",
+            "gaming",
+            "commercial",
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-2",
+          "title": "Managed Global Vendor Ecosystems:",
+          "text": "Bridged the gap between demanding Chinese clients and elite international animation/VFX studios (e.g., Le Cube, Serial Cut). Translated complex, high-pressure client briefs into actionable creative directives for artists across Europe and South America.",
+          "tags": [
+            "international",
+            "leadership",
+            "cg_animation"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-3",
+          "title": "Drove P&L and Commercial Scoping (SOW):",
+          "text": "Owned the bidding, budgeting, and margin optimization process. Successfully negotiated Statements of Work (SOW) and delivery schedules, ensuring healthy cash flow and profitability for high-volume, concurrent workstreams.",
+          "tags": [
+            "financing",
+            "commercial"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-24",
+          "title": "Production & Operations:",
+          "text": "Global Workstream Operations, Integrated Campaign Delivery, Cross-border Co-production, Post-Production Mastering, Vendor & Talent Procurement.",
+          "tags": [
+            "international",
+            "post_production",
+            "commercial",
+            "operations",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-28",
+          "title": "Finance & ERP:",
+          "text": "Movie Magic Budgeting, Advanced Excel/Numbers.",
+          "tags": [
+            "film",
+            "financing",
+            "operations"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-29",
+          "title": "Creative & Post-Production:",
+          "text": "Adobe Creative Suite (Premiere Pro, After Effects, Illustrator), Figma.",
+          "tags": [
+            "post_production"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-30",
+          "title": "AI Integration:",
+          "text": "Openclaw, Google Gemini, Midjourney, various AI-driven localization and workflow automation tools. Runway, Higgsfield, Veo, Nano Banana **Languages:**",
+          "tags": [
+            "legal",
+            "operations",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-31",
+          "title": "Chinese (Mandarin):",
+          "text": "Native",
+          "tags": [],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-32",
+          "title": "English:",
+          "text": "Fluent (Full Professional/Academic Proficiency - highly adept at drafting complex legal amendments, pitch decks, and technical production briefs).",
+          "tags": [
+            "legal"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-35",
+          "title": "FMCG & Lifestyle:",
+          "text": "Nike, Heineken, Durex, Spotify, Zhiben (至本), Airbnb, Ritz Carlton, Crocs.",
+          "tags": [
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-36",
+          "title": "Agencies :",
+          "text": "AKQA, BBH, VMLY&R, Publicis (Prodigious), Isobar, M&C Saatchi, Havas. Here is the comprehensive and professionally formatted Key Project List & Case Studies for Eric Zheng, detailing 11 major projects across international feature films, global commercial campaigns, and top-tier gaming cinematics.",
+          "tags": [
+            "film",
+            "international",
+            "gaming",
+            "commercial",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ]
+    },
+    {
+      "id": "exp-03",
+      "company": "Final Frontier",
+      "title": "Lead Producer",
+      "period": "Apr 2022 — Jul 2023",
+      "location": "Shanghai",
+      "type": "general",
+      "master_bullets": [
+        {
+          "id": "exp-03-01",
+          "title": "Operational Throughput & Efficiency:",
+          "text": "Managed concurrent delivery of 10+ premium integrated campaigns annually for Nike, BMW, vivo, NetEase, and POP MART. Optimized SOPs using Jira/Asana, reducing production cycle time by 15% while maintaining \"bar-raising\" quality standards.",
+          "tags": [
+            "commercial",
+            "operations",
+            "leadership"
+          ],
+          "metrics": [
+            "10+",
+            "15%"
+          ]
+        }
+      ],
+      "extra_bullets": [
+        {
+          "id": "fin-27",
+          "title": "Project Management:",
+          "text": "Monday.com, Trello, Asana, Jira, Slack, SyncSketch.",
+          "tags": [],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ],
+      "all_bullets": [
+        {
+          "id": "exp-03-01",
+          "title": "Operational Throughput & Efficiency:",
+          "text": "Managed concurrent delivery of 10+ premium integrated campaigns annually for Nike, BMW, vivo, NetEase, and POP MART. Optimized SOPs using Jira/Asana, reducing production cycle time by 15% while maintaining \"bar-raising\" quality standards.",
+          "tags": [
+            "commercial",
+            "operations",
+            "leadership"
+          ],
+          "metrics": [
+            "10+",
+            "15%"
+          ]
+        },
+        {
+          "id": "fin-27",
+          "title": "Project Management:",
+          "text": "Monday.com, Trello, Asana, Jira, Slack, SyncSketch.",
+          "tags": [],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ]
+    },
+    {
+      "id": "exp-04",
+      "company": "IK DESIGN Experiential & Spatial Design",
+      "title": "Project Lead (Experiential Production)",
+      "period": "Jul 2017 — Dec 2018",
+      "location": "Shanghai",
+      "type": "general",
+      "master_bullets": [
+        {
+          "id": "exp-04-01",
+          "title": "Physical Build & Execution Ownership:",
+          "text": "Managed end-to-end production for physical activations ($150k - $2M budgets). Controlled complex fabrication pipelines and material sourcing for luxury brand retail and event spaces.",
+          "tags": [
+            "financing",
+            "commercial",
+            "leadership",
+            "experiential"
+          ],
+          "metrics": [
+            "$150",
+            "$2M"
+          ]
+        }
+      ],
+      "extra_bullets": [],
+      "all_bullets": [
+        {
+          "id": "exp-04-01",
+          "title": "Physical Build & Execution Ownership:",
+          "text": "Managed end-to-end production for physical activations ($150k - $2M budgets). Controlled complex fabrication pipelines and material sourcing for luxury brand retail and event spaces.",
+          "tags": [
+            "financing",
+            "commercial",
+            "leadership",
+            "experiential"
+          ],
+          "metrics": [
+            "$150",
+            "$2M"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exp-05",
+      "company": "D'ELE Management & Production",
+      "title": "Head of Production Operations",
+      "period": "Oct 2015 — Jul 2017",
+      "location": "Shanghai",
+      "type": "operations",
+      "master_bullets": [
+        {
+          "id": "exp-05-01",
+          "title": "0-to-1 Business Scaling:",
+          "text": "Launched and scaled the agency's internal content division to $1.5M+ revenue in year one. Established foundational financial workflows, vendor compliance protocols, and client billing visibility.",
+          "tags": [
+            "financing",
+            "legal",
+            "commercial",
+            "operations",
+            "leadership"
+          ],
+          "metrics": [
+            "$1.5M+"
+          ]
+        }
+      ],
+      "extra_bullets": [
+        {
+          "id": "fin-4",
+          "title": "Mentored Cross-Functional Teams:",
+          "text": "Built and managed a robust internal team of producers and account managers (Catherine Fong, Keira, Phoenix, Lisa Wang, etc.), serving as the ultimate escalation point for creative disputes, timeline crises, and client relationship management. **Production Coordinator / Junior Producer** _KerSound Studios / D'ELE / Independent | 2015 — 2017_",
+          "tags": [
+            "legal",
+            "leadership"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ],
+      "all_bullets": [
+        {
+          "id": "exp-05-01",
+          "title": "0-to-1 Business Scaling:",
+          "text": "Launched and scaled the agency's internal content division to $1.5M+ revenue in year one. Established foundational financial workflows, vendor compliance protocols, and client billing visibility.",
+          "tags": [
+            "financing",
+            "legal",
+            "commercial",
+            "operations",
+            "leadership"
+          ],
+          "metrics": [
+            "$1.5M+"
+          ]
+        },
+        {
+          "id": "fin-4",
+          "title": "Mentored Cross-Functional Teams:",
+          "text": "Built and managed a robust internal team of producers and account managers (Catherine Fong, Keira, Phoenix, Lisa Wang, etc.), serving as the ultimate escalation point for creative disputes, timeline crises, and client relationship management. **Production Coordinator / Junior Producer** _KerSound Studios / D'ELE / Independent | 2015 — 2017_",
+          "tags": [
+            "legal",
+            "leadership"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ]
+    },
+    {
+      "id": "exp-06",
+      "company": "Ker Sound Studios",
+      "title": "Studio Operations Manager",
+      "period": "Jul 2012 — Jul 2015",
+      "location": "Shanghai",
+      "type": "operations",
+      "master_bullets": [
+        {
+          "id": "exp-06-01",
+          "title": "AAA Asset Delivery:",
+          "text": "Supervised 200+ hours of localized assets for AAA gaming titles (including Monster Hunter Online). Acted as the strategic liaison between European leadership and local clients to ensure world-class technical standards.",
+          "tags": [
+            "international",
+            "gaming",
+            "commercial",
+            "audio"
+          ],
+          "metrics": [
+            "200+"
+          ]
+        }
+      ],
+      "extra_bullets": [
+        {
+          "id": "fin-5",
+          "title": "Coordinated Award-Winning Feature Film:",
+          "text": "Served as Production Coordinator for _End of Summer_ (西小河的夏天), managing on-set logistics, crew scheduling, and cross-departmental operations, contributing to its win of the 2017 Busan International Film Festival Audience Choice Award.",
+          "tags": [
+            "film",
+            "international",
+            "operations"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-6",
+          "title": "Executed International TVC Campaigns:",
+          "text": "Facilitated cross-border commercial shoots, coordinating international directors, DOPs, and styling teams for clients like Coach and Huawei. Handled casting, equipment rentals, and on-set bilingual coordination.",
+          "tags": [
+            "legal",
+            "international",
+            "commercial",
+            "leadership",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-33",
+          "title": "Gaming & Tech:",
+          "text": "Tencent (TiMi, Morefun, IEG), Riot Games (_League of Legends Mobile_), miHoYo (_Genshin Impact, Zenless Zone Zero, Honkai_), NetEase (_Naraka: Bladepoint_), Huawei, vivo, NIO, Ford, 3iRobotix.",
+          "tags": [
+            "gaming",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-34",
+          "title": "Luxury, Fashion & Beauty:",
+          "text": "L'Oreal, Estée Lauder, Cartier, Coach.",
+          "tags": [],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ],
+      "all_bullets": [
+        {
+          "id": "exp-06-01",
+          "title": "AAA Asset Delivery:",
+          "text": "Supervised 200+ hours of localized assets for AAA gaming titles (including Monster Hunter Online). Acted as the strategic liaison between European leadership and local clients to ensure world-class technical standards.",
+          "tags": [
+            "international",
+            "gaming",
+            "commercial",
+            "audio"
+          ],
+          "metrics": [
+            "200+"
+          ]
+        },
+        {
+          "id": "fin-5",
+          "title": "Coordinated Award-Winning Feature Film:",
+          "text": "Served as Production Coordinator for _End of Summer_ (西小河的夏天), managing on-set logistics, crew scheduling, and cross-departmental operations, contributing to its win of the 2017 Busan International Film Festival Audience Choice Award.",
+          "tags": [
+            "film",
+            "international",
+            "operations"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-6",
+          "title": "Executed International TVC Campaigns:",
+          "text": "Facilitated cross-border commercial shoots, coordinating international directors, DOPs, and styling teams for clients like Coach and Huawei. Handled casting, equipment rentals, and on-set bilingual coordination.",
+          "tags": [
+            "legal",
+            "international",
+            "commercial",
+            "leadership",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-33",
+          "title": "Gaming & Tech:",
+          "text": "Tencent (TiMi, Morefun, IEG), Riot Games (_League of Legends Mobile_), miHoYo (_Genshin Impact, Zenless Zone Zero, Honkai_), NetEase (_Naraka: Bladepoint_), Huawei, vivo, NIO, Ford, 3iRobotix.",
+          "tags": [
+            "gaming",
+            "ai"
+          ],
+          "metrics": null,
+          "source": "legacy"
+        },
+        {
+          "id": "fin-34",
+          "title": "Luxury, Fashion & Beauty:",
+          "text": "L'Oreal, Estée Lauder, Cartier, Coach.",
+          "tags": [],
+          "metrics": null,
+          "source": "legacy"
+        }
+      ]
+    }
+  ]
+}

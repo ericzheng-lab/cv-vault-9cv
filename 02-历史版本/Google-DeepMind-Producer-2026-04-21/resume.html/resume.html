@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Zheng - Executive Producer Master Resume</title>
+    
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-black: #111111;
+            --secondary-grey: #333333;
+            --light-grey: #666666;
+            --border-color: #d0d0d0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--primary-black);
+            line-height: 1.45;
+            font-size: 9.2pt;
+            font-weight: 400;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 30px auto;
+            padding: 40px 65px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* Typography */
+        h1, h2, h3, .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-black);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #555;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--primary-black);
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 34pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 14pt;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--secondary-grey);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-line {
+            font-size: 8.5pt;
+            color: var(--light-grey);
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+
+        .contact-line span.separator {
+            margin: 0 8px;
+            color: var(--border-color);
+        }
+
+        /* Section Headers */
+        h3 {
+            font-size: 15pt;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 0.5px solid var(--primary-black);
+            letter-spacing: 0.8px;
+        }
+
+        section {
+            margin-bottom: 18px;
+        }
+
+        /* Executive Profile */
+        .profile-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .profile-list li {
+            margin-bottom: 7px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .profile-list strong {
+            font-weight: 600;
+        }
+
+        /* Competencies Grid */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .competency-item {
+            font-size: 8pt;
+            color: var(--secondary-grey);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            background: #f8f8f8;
+            padding: 6px 5px;
+            text-align: center;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+        }
+
+        /* Experience */
+        .job-entry {
+            margin-bottom: 15px;
+            break-inside: avoid;
+        }
+
+        .job-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .role-title {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+
+        .date-range {
+            font-size: 8.3pt;
+            color: var(--light-grey);
+            white-space: nowrap;
+            margin-left: 12px;
+        }
+
+        .company-row {
+            margin-bottom: 4px;
+        }
+
+        .company-name {
+            font-style: bold;
+            color: var(--secondary-grey);
+            font-size: 8.8pt;
+        }
+
+        .exp-list, .key-achievement-list {
+            padding-left: 16px;
+            margin-top: 4px;
+        }
+
+        .exp-list li, .key-achievement-list li {
+            margin-bottom: 4px;
+            line-height: 1.42;
+            text-align: justify;
+        }
+
+        .key-achievement {
+            margin-top: 8px;
+            padding: 10px 15px;
+            background-color: #f6f6f6;
+            border-left: 3px solid var(--primary-black);
+        }
+
+        .key-achievement-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--primary-black);
+            font-size: 10.5pt;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .key-achievement-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        .key-achievement-list li {
+            text-indent: -8px;
+            padding-left: 8px;
+        }
+
+        /* Bottom Grid */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .edu-item, .skill-item {
+            margin-bottom: 10px;
+        }
+
+        .skill-category {
+            display: block;
+            font-weight: 600;
+            font-size: 8.7pt;
+            margin-bottom: 2px;
+        }
+
+        .skill-text, .company-name, .edu-item div {
+            line-height: 1.45;
+        }
+
+        /* Print */
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                width: auto;
+                min-height: auto;
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header Section -->
+        <header>
+            <h1>Eric Zheng</h1>
+            <h2>Executive Producer | Global Creative Operations</h2>
+            <div class="contact-line">
+                Greater New York Area <span class="separator">|</span>
+                <a href="mailto:eric.zheng@drsfilms.com">eric.zheng@drsfilms.com</a> <span class="separator">|</span>
+                <a href="https://www.drsfilms.com" target="_blank">www.drsfilms.com</a> <span class="separator">|</span>
+                US Permanent Resident
+            </div>
+        </header>
+
+        <!-- Executive Profile Section -->
+        <section>
+            <h3>Executive Profile</h3>
+            <ul class="profile-list">
+                <li><strong>AI-Creative Bridge:</strong> Award-winning Executive Producer with 15+ years at the intersection of cinematic storytelling and emerging technology. Produced Sundance and Berlinale-selected features while pioneering AI-powered production workflows.</li>
+                <li><strong>Technical Production Expertise:</strong> Hands-on experience with generative AI tools (Openclaw, Gemini, Midjourney, Runway, Higgsfield, Veo) and ML-integrated pipelines. Proven ability to translate cutting-edge AI capabilities into professional film, TV, and VFX workflows.</li>
+                <li><strong>Global Operations:</strong> Managed $2.5M+ budgets across international co-productions (China, France, Denmark, Qatar), navigating complex legal, censorship, and technical delivery requirements for Tier-1 theatrical and streaming platforms.</li>
+            </ul>
+        </section>
+
+        <!-- Core Competencies - The Hardcore Version -->
+        <section>
+            <h3>Core Competencies</h3>
+            <div class="competencies-grid">
+                <div class="competency-item">AI & Generative Media Tools</div>
+                <div class="competency-item">Technical-Creative Translation</div>
+                <div class="competency-item">Research Environment Production</div>
+                <div class="competency-item">Global Co-Production & Financing</div>
+                <div class="competency-item">Award-Winning Content Development</div>
+                <div class="competency-item">Cross-Functional Team Leadership</div>
+                <div class="competency-item">Emerging Technology Integration</div>
+                <div class="competency-item">International Legal & Censorship</div>
+                <div class="competency-item">Executive Production Leadership</div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section>
+            <h3>Professional Experience</h3>
+
+            <!-- Job 1 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Founder & Executive Producer</div>
+                    <div class="date-range">Jul 2017 — Dec 2025</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">First Light Films | Shanghai / Global</span>
+                </div>
+                <ul class="exp-list">
+                                        <li><strong>Managed Censorship & Gov Relations (China):</strong> Maneuvered through China’s stringent censorship system, successfully orchestrating a cross-provincial project transfer (from Sichuan to Zhejiang Film Bureau) to secure the "Dragon Mark" (Public Screening License) and a 1M RMB local government cultural grant.</li>
+                    <li><strong>Led Global Co-Production Financing:</strong> Architected the $2.5M financing structure for the feature film _Brief History of A Family_, successfully pitching and securing top-tier international funds including the French CNC (Aides aux Cinémas du Monde), Ile-de-France regional fund (€115K), Doha Film Institute (DFI) Post-Production Grant, and TorinoFilmLab (TFL) Co-Production Award (€50K).</li>
+                    <li><strong>Technical Mastering & Regulatory Affairs:</strong> Directed a three-country production pipeline. Performed rigorous Technical QC on 4.5K masters, personally auditing pixel errors and blanking mistakes in ProRes 4444 XYZ / TIFF sequences to meet Tier-1 theatrical specs. Successfully secured a $150k USD Provincial Arts Fund.</li>
+                </ul>
+                    <div class="key-achievement">
+                <div class="key-achievement-title"><strong>Key Achievement: Produced Feature Film - "Brief History of A Family" (<a href="https://www.imdb.com/title/tt26749327/" target="_blank">IMDB</a>)</strong></div>
+                <ul class="key-achievement-list">
+                    <li>First Chinese debut since 2006 to sweep both <strong>Sundance (World Competition)</strong> and <strong>Berlinale (Panorama)</strong>. Secured theatrical distribution in 60+ territories with <strong>92% Rotten Tomatoes</strong> and Metascore 80.</li>
+                </ul>
+            </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Executive Producer (Strategic Project Lead)</div>
+                    <div class="date-range">Jul 2023 — Dec 2024</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">Final Frontier (Hybrid Creative Agency) | Shanghai / Global</span>
+                </div>
+                <ul class="exp-list">
+                                        <li><strong>Speheaded S-Tier Commercial & CG Animation Pipelines:</strong> Led the end-to-end production of multi-million RMB/USD campaigns for top-tier global brands and tech/gaming giants (Tencent, Riot Games, miHoYo, Nike, L'Oreal).</li>
+                    <li><strong>DTC Revenue Transformation:</strong> Generated $6M+ USD in portfolio revenue within 18 months by pivoting the studio from a traditional vendor model to a Direct-to-Client (DTC) Hybrid Agency model. Led upstream creative pitching and downstream execution for multi-million dollar SOWs.</li>
+                    <li><strong>Global Studio Orchestration:</strong> Directed operations for a globally distributed network of elite studios (e.g., Le Cube), resolving cross-timezone friction and language barriers. Mentored a team of producers to maintain a culture of extreme ownership and zero-error delivery.</li>
+                </ul>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Lead Producer</div>
+                    <div class="date-range">Apr 2022 — Jul 2023</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">Final Frontier | Shanghai</span>
+                </div>
+                <ul class="exp-list">
+                                        <li><strong>Operational Throughput & Efficiency:</strong> Managed concurrent delivery of 10+ premium integrated campaigns annually for Nike, BMW, vivo, NetEase, and POP MART. Optimized SOPs using Jira/Asana, reducing production cycle time by 15% while maintaining "bar-raising" quality standards.</li>
+                </ul>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Project Lead (Experiential Production)</div>
+                    <div class="date-range">Jul 2017 — Dec 2018</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">IK DESIGN Experiential & Spatial Design | Shanghai</span>
+                </div>
+                <ul class="exp-list">
+                                        <li><strong>Physical Build & Execution Ownership:</strong> Managed end-to-end production for physical activations ($150k - $2M budgets). Controlled complex fabrication pipelines and material sourcing for luxury brand retail and event spaces.</li>
+                </ul>
+            </div>
+
+            <!-- Job 5 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Head of Production Operations</div>
+                    <div class="date-range">Oct 2015 — Jul 2017</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">D'ELE Management & Production | Shanghai</span>
+                </div>
+                <ul class="exp-list">
+                                        <li><strong>0-to-1 Business Scaling:</strong> Launched and scaled the agency's internal content division to $1.5M+ revenue in year one. Established foundational financial workflows, vendor compliance protocols, and client billing visibility.</li>
+                    <li><strong>Mentored Cross-Functional Teams:</strong> Built and managed a robust internal team of producers and account managers (Catherine Fong, Keira, Phoenix, Lisa Wang, etc.), serving as the ultimate escalation point for creative disputes, timeline crises, and client relationship management. **Production Coordinator / Junior Producer** _KerSound Studios / D'ELE / Independent | 2015 — 2017_</li>
+                </ul>
+            </div>
+            
+            <!-- Job 6 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Studio Operations Manager</div>
+                    <div class="date-range">Jul 2012 — Jul 2015</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">Ker Sound Studios | Shanghai</span>
+                </div>
+                <ul class="exp-list">
+                                        <li><strong>Executed International TVC Campaigns:</strong> Facilitated cross-border commercial shoots, coordinating international directors, DOPs, and styling teams for clients like Coach and Huawei. Handled casting, equipment rentals, and on-set bilingual coordination.</li>
+                    <li><strong>Coordinated Award-Winning Feature Film:</strong> Served as Production Coordinator for _End of Summer_ (西小河的夏天), managing on-set logistics, crew scheduling, and cross-departmental operations, contributing to its win of the 2017 Busan International Film Festival Audience Choice Award.</li>
+                    <li><strong>AAA Asset Delivery:</strong> Supervised 200+ hours of localized assets for AAA gaming titles (including Monster Hunter Online). Acted as the strategic liaison between European leadership and local clients to ensure world-class technical standards.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education & Skills Grid -->
+        <section>
+            <div class="bottom-grid">
+                <div>
+                    <h3>Education & Accolades</h3>
+                    
+                    <div class="edu-item">
+                        <div class="role-title">Quantic School of Business and Technology</div>
+                        <div class="company-name">Executive MBA (EMBA) | 2024</div>
+                    </div>
+                    
+                    <div class="edu-item">
+                        <div class="role-title">Shanghai University</div>
+                        <div class="company-name">B.A. Film & TV Production | 2008</div>
+                    </div>
+                    
+                    <div class="edu-item" style="margin-top: 15px;">
+                        <span class="skill-category">Selected Accolades</span>
+                        <div class="skill-text" style="line-height: 1.5;">
+                            Sundance (Grand Jury nominee), Noir in Festival (Best Film Winner), Camerimage (Best Debut nominee), Zurich Film Festival (Special Mention), Berlinale (Panorama).
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Skills & Affiliations</h3>
+                    
+                    <div class="skill-item">
+                        <span class="skill-category">Core Expertise</span>
+                        <div class="skill-text">Global Financing & Co-Production, Chain of Title & Legal Delivery, Technical Post & 4.5K Mastering, AI Tool Integration, Cross-Functional Leadership, Integrated Campaign Delivery, Vendor & Talent Procurement, SOW & Margin Optimization</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-category">Tools & Software</span>
+                        <div class="skill-text">Movie Magic Budgeting & Scheduling, Jira (Power User), Asana, Monday.com, frame.io, Adobe Creative Suite, Openclaw, Google Gemini, Midjourney, Runway, Higgsfield, Veo</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-category">Affiliations</span>
+                        <div class="skill-text"><strong>Member of Gold House</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+<!-- 
+Generated: 2026-04-21T12:48:30.000389
+Job Type: Ai Film Hybrid
+Database: experience-bank-final.json
+Template: resume-template-master-locked.html
+-->
+
+</body>
+</html>

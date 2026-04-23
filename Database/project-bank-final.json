@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generated_at": "2026-04-07T08:38:46.319591",
+    "source": [
+      "/Users/drs/Documents/Obsidian-Vault/9_CV/Database/project-like-bullets.json"
+    ],
+    "count": 18
+  },
+  "project_like_bullets": [
+    {
+      "id": "exp-02-01",
+      "title": "S-Tier IP Portfolio Ownership:",
+      "text": "Directed high-end CG and animation production for the world's most valuable gaming franchises, including League of Legends (Riot Games), DNF (Tencent), Honor of Kings, and miHoYo’s Genshin Impact / ZZZ.",
+      "tags": [
+        "gaming",
+        "leadership"
+      ],
+      "metrics": null,
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-7",
+      "title": "When:",
+      "text": "2017 – 2024",
+      "tags": [],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-8",
+      "title": "What/Client:",
+      "text": "Independent Feature Film (Co-production: China, France, Denmark, Qatar) / Budget: ~$2.5M USD.",
+      "tags": [
+        "film",
+        "financing",
+        "international"
+      ],
+      "metrics": [
+        "$2.5M"
+      ],
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-9",
+      "title": "Why & How:",
+      "text": "Required bridging extreme gaps between Chinese independent filmmaking constraints and rigorous European funding/auditing standards. Achieved through relentless global pitching, cross-cultural legal negotiations, and hands-on technical supervision.",
+      "tags": [
+        "film",
+        "financing",
+        "legal",
+        "international",
+        "ai"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-10",
+      "title": "Scope:",
+      "text": "Managed a multi-national crew and post-production labs across 3 continents, dealing with multi-currency budgets (RMB, EUR, DKK, USD).",
+      "tags": [
+        "financing",
+        "post_production",
+        "leadership"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-11",
+      "title": "Ownership:",
+      "text": "Drove the entire financing plan, government censorship clearance, international legal delivery, and technical mastering.",
+      "tags": [
+        "financing",
+        "legal",
+        "international",
+        "post_production"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-12",
+      "title": "Business Impact:",
+      "text": "Made history as the first Chinese directorial debut since 2006 to be dual-selected for the Sundance Film Festival (World Cinema Dramatic Competition) and Berlinale (Panorama). Successfully secured global distribution. **Project 2: Tencent \"Dungeon & Fighter\" (DNF) & \"Honor of Kings\" CG Campaigns**",
+      "tags": [
+        "film",
+        "international",
+        "gaming",
+        "commercial",
+        "cg_animation",
+        "ai"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-13",
+      "title": "When:",
+      "text": "2023 – 2024",
+      "tags": [],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-14",
+      "title": "What/Client:",
+      "text": "High-end CG character trailers and promotional animations for Tencent IEG (TiMi/Morefun Studios).",
+      "tags": [
+        "gaming",
+        "cg_animation",
+        "ai"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-15",
+      "title": "Why & How:",
+      "text": "The client required hyper-stylized, action-heavy 3D animations within brutal turnaround times. Managed expectations by acting as a buffer between Tencent's strict IP requirements and international animation vendors.",
+      "tags": [
+        "legal",
+        "international",
+        "gaming",
+        "leadership",
+        "cg_animation"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-16",
+      "title": "Scope:",
+      "text": "Managed budgets over 1M+ RMB per asset, coordinating dozens of remote artists, animators, and sound designers. 500K USD in total",
+      "tags": [
+        "financing",
+        "leadership"
+      ],
+      "metrics": [
+        "500K"
+      ],
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-17",
+      "title": "Ownership:",
+      "text": "Lead Executive Producer. Drove the pitch, locked the SOW, supervised the daily WIP reviews (via Monday.com/SyncSketch), and ensured bilingual script/VO accuracy.",
+      "tags": [
+        "legal",
+        "leadership",
+        "ai"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-18",
+      "title": "Business Impact:",
+      "text": "Delivered top-tier visual assets that resonated with millions of players, securing Final Frontier’s position as a preferred vendor in Tencent’s highly competitive global procurement pool. **Project 3: Nike 618 & Dragon Campaigns (via AKQA)**",
+      "tags": [
+        "international",
+        "gaming",
+        "commercial",
+        "ai"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-19",
+      "title": "When:",
+      "text": "2023",
+      "tags": [],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-20",
+      "title": "What/Client:",
+      "text": "Mixed-media launch assets / Budget: ~1M RMB.",
+      "tags": [
+        "financing"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-21",
+      "title": "Scope:",
+      "text": "Fast-turnaround digital assets, KV mocks, and 30s animations leveraging global Nike toolkits.",
+      "tags": [
+        "international",
+        "cg_animation"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-22",
+      "title": "Ownership:",
+      "text": "Led budget negotiations, resource allocation, and direct communication with AKQA creatives to align on visual tone and deliverables.",
+      "tags": [
+        "financing",
+        "legal"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    },
+    {
+      "id": "fin-23",
+      "title": "Business Impact:",
+      "text": "Successfully delivered high-energy, culturally relevant assets for Nike's crucial China e-commerce festivals, maintaining margins despite agency pressure.",
+      "tags": [
+        "film",
+        "international",
+        "ai"
+      ],
+      "metrics": null,
+      "source": "legacy",
+      "bucket": "project_case"
+    }
+  ]
+}

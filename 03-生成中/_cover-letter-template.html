@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Zheng - Cover Letter Template</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-black: #111111;
+            --secondary-grey: #333333;
+            --light-grey: #666666;
+            --border-color: #d0d0d0;
+            --accent-blue: #007aff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: var(--primary-black);
+            line-height: 1.6;
+            font-size: 10.5pt;
+            font-weight: 400;
+        }
+
+        .page {
+            background: white;
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 40px 60px;
+            box-shadow: none;
+            position: relative;
+        }
+
+        /* 编辑提示 */
+        .edit-hint {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 10pt;
+            border-radius: 4px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .edit-hint h4 {
+            margin-bottom: 8px;
+            color: var(--primary-black);
+        }
+
+        .edit-hint ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .edit-hint li {
+            margin-bottom: 4px;
+        }
+
+        /* 头部 */
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--primary-black);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .contact-line {
+            font-size: 9pt;
+            color: var(--secondary-grey);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .separator {
+            margin: 0 10px;
+            color: var(--border-color);
+        }
+
+        /* 正文 */
+        .letter-content {
+            text-align: left;
+            color: var(--primary-black);
+        }
+
+        .letter-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .subject-line {
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: 25px;
+            font-size: 11pt;
+            text-transform: uppercase;
+        }
+
+        .salutation {
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: var(--primary-black);
+        }
+
+        .letter-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .letter-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .letter-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-black);
+            font-weight: bold;
+            font-size: 1.2em;
+            line-height: 1.2;
+        }
+
+        .letter-list strong {
+            color: var(--primary-black);
+            font-weight: 600;
+        }
+
+        .sign-off {
+            margin-top: 35px;
+        }
+
+        .signature {
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-top: 10px;
+            font-size: 10.5pt;
+        }
+
+        /* 打印优化 */
+        @media print {
+            body { background: white; }
+            .page { 
+                margin: 0; 
+                padding: 20px 40px; 
+                width: 100%; 
+                max-width: none;
+                min-height: auto;
+            }
+            .no-print { display: none !important; }
+        }
+
+        /* 高亮可变区块 */
+        .variable-section {
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 编辑提示 -->
+        <div class="edit-hint no-print">
+            <h4>📝 Cover Letter 写作指南</h4>
+            <ul>
+                <li><strong>固定结构</strong>：Header → Subject → Salutation → Opening → Body ×2 → Bullet List → Closing → Sign-off</li>
+                <li><strong>可变内容</strong>：Subject 行、Opening 钩子、Body 段落、Bullet 选择（从经验库选 2-3 个）</li>
+                <li><strong>写作策略</strong>：JD 偏离小 → 直接改写简历 bullets；偏离中 → 从经验库选材；偏离大 → 深度重构</li>
+                <li><strong>页数</strong>：CL 保持单页，约 300-400 词</li>
+            </ul>
+        </div>
+
+        <!-- Header：不可变 -->
+        <header>
+            <h1>Eric Zheng</h1>
+            <div class="contact-line">
+                Greater New York Area
+                <span class="separator">|</span>
+                eric.zhengyue@gmail.com
+                <span class="separator">|</span>
+                US Permanent Resident
+            </div>
+        </header>
+
+        <div class="letter-content">
+            <!-- Subject Line：可变 -->
+            <div class="variable-section">
+                <div class="subject-line">Subject: Application for [职位名称] - Eric Zheng</div>
+            </div>
+
+            <!-- Salutation：可变（根据公司调整） -->
+            <div class="variable-section">
+                <div class="salutation">[Dear Hiring Committee, / Dear [具体人名], / To the Recruitment Team,]</div>
+            </div>
+
+            <!-- Opening Paragraph：可变（钩子设计） -->
+            <div class="variable-section">
+                <p>[钩子开场：As the Producer behind the Sundance and Berlinale selected feature... / With 15+ years managing $6M+ portfolios for global brands like Riot Games... / Having built post-production infrastructures from the ground up...]</p>
+                
+                <p>[连接句：I am writing to express my strong interest in the [职位] role at [公司], bringing a unique blend of [根据岗位调整：independent prestige film experience / high-volume agency operations / technical post-production expertise].]</p>
+            </div>
+
+            <!-- Body Paragraph 1：可变（经验库选材） -->
+            <div class="variable-section">
+                <p>[第一层经验：电影制作 / 商业运营 / 创意领导 — 根据岗位侧重选择]</p>
+                
+                <p>[第二层经验：补充另一个维度，展示广度]</p>
+            </div>
+
+            <!-- Bullet List：可变（从经验库选 2-3 个） -->
+            <div class="variable-section">
+                <p>[过渡句：Leveraging my [Executive MBA / 15-year track record / dual expertise], I approach this role as a strategic operation:]</p>
+                
+                <ul class="letter-list">
+                    <li><strong>[从经验库选第1个]:</strong> [用 STAR 结构展开：Situation → Action → Result]</li>
+                    
+                    <li><strong>[从经验库选第2个]:</strong> [量化结果，突出与岗位的相关性]</li>
+                    
+                    <li><strong>[从经验库选第3个，可选]:</strong> [技术工具 / 流程优化 / 团队建设]</li>
+                </ul>
+            </div>
+
+            <!-- Closing Paragraph：可变（文化契合） -->
+            <div class="variable-section">
+                <p>[文化契合：Beyond technical execution, I share [公司]'s commitment to [diverse storytelling / innovation / excellence]. As a [Gold House member / EMBA graduate / Sundance alum], I am dedicated to [building culturally conscious pipelines / driving operational excellence / elevating brand narratives].]</p>
+                
+                <p>[结尾：I look forward to discussing how my [具体能力] can contribute to [公司]. Thank you for your time and consideration.]</p>
+            </div>
+
+            <!-- Sign-off：不可变 -->
+            <div class="sign-off">
+                Sincerely,
+                <div class="signature">Eric Zheng</div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer no-print" style="margin-top: 40px; font-size: 9pt; color: #666; text-align: center;">
+            模板版本：v1.0 | 基于 Sundance 版式 | 生成时间：2026-03-24
+        </div>
+    </div>
+</body>
+</html>

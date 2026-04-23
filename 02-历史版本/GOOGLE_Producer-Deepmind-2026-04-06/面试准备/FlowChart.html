@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google DeepMind Interview Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base Mermaid SVG fix to allow natural scaling */
+        .mermaid svg {
+            min-width: 800px;
+            height: auto;
+            max-width: none !important;
+        }
+        /* Hide scrollbars during panning */
+        #zoom-container::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 p-4 md:p-8 min-h-screen flex items-center justify-center font-sans">
+    
+    <div class="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+        
+        <!-- Header -->
+        <div class="bg-blue-600 p-6 md:p-8 text-white text-center relative z-20">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Google DeepMind Interview Process</h1>
+            <p class="mt-3 text-blue-100 text-sm md:text-base font-medium tracking-wide uppercase">
+                Tactical Roadmap & Core Preparations for L6/L7
+            </p>
+        </div>
+        
+        <!-- Interactive Canvas Area -->
+        <div class="relative bg-slate-50 border-b border-slate-200">
+            
+            <!-- Floating Toolbar -->
+            <div class="absolute top-4 right-4 z-20 flex flex-col space-y-2 bg-white/90 backdrop-blur p-1.5 rounded-xl shadow-lg border border-slate-200">
+                <button id="btn-zoom-in" class="p-2 hover:bg-blue-50 hover:text-blue-600 rounded-lg text-slate-600 transition-colors" title="Zoom In">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                </button>
+                <button id="btn-zoom-out" class="p-2 hover:bg-blue-50 hover:text-blue-600 rounded-lg text-slate-600 transition-colors" title="Zoom Out">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"></path></svg>
+                </button>
+                <div class="h-px w-full bg-slate-200 my-1"></div>
+                <button id="btn-reset" class="p-2 hover:bg-blue-50 hover:text-blue-600 rounded-lg text-slate-600 transition-colors" title="Reset View">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                </button>
+            </div>
+
+            <!-- User Hint -->
+            <div class="absolute bottom-4 left-4 z-20 bg-white/80 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-slate-600 shadow border border-slate-200 pointer-events-none flex items-center space-x-2">
+                <span>🖱️</span>
+                <span>Scroll to Zoom</span>
+                <span class="text-slate-300">|</span>
+                <span>Drag to Pan</span>
+            </div>
+
+            <!-- Viewport Container -->
+            <div id="zoom-container" class="w-full h-[600px] overflow-hidden cursor-grab relative">
+                <!-- Content to scale/translate -->
+                <div id="zoom-content" class="w-full h-full flex justify-center py-10" style="transform-origin: 0 0;">
+                    <pre class="mermaid w-full flex justify-center">
+                        %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f0fe', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#f3f4f6', 'fontSize': '18px'}}}%%
+                        graph TD
+                            Start(("Resume Passed")) --> HR1
+                            
+                            subgraph P1 [Phase 1: Internal HR Review]
+                                HR1["Core HR Desk Review"]
+                                A1("Study: ComfyUI & Veo 3")
+                                A2("Prep: $9M Portfolio Data")
+                                A3("Activate Referrals")
+                                HR1 -.-> A1
+                                HR1 -.-> A2
+                                HR1 -.-> A3
+                            end
+                            
+                            HR1 ==>|"Match Found"| HR2
+                            
+                            subgraph P2 [Phase 2: Phone Screen]
+                                HR2["Recruiter Phone Screen"]
+                                A4("2-Min Elevator Pitch")
+                                A5("Why Google? Motivation")
+                                A6("Salary Prep / No Early Numbers")
+                                HR2 -.-> A4
+                                HR2 -.-> A5
+                                HR2 -.-> A6
+                            end
+                            
+                            HR2 ==>|"Cleared"| HM
+                            
+                            subgraph P3 [Phase 3: Hiring Manager]
+                                HM["Hiring Manager Interview"]
+                                A7("STAR: Ambiguity & Budgets")
+                                A8("Moat: Sundance + AAA Pipeline")
+                                A9("Reverse Questions for HM")
+                                HM -.-> A7
+                                HM -.-> A8
+                                HM -.-> A9
+                            end
+                            
+                            HM ==>|"Strong Yes"| Loop
+                            
+                            subgraph P4 [Phase 4: The Loop]
+                                Loop["The Loop Onsite / 4-5 Rounds"]
+                                A10("RRK: Pipeline Architecture")
+                                A11("GCA: Whiteboarding & Problem Solving")
+                                A12("Leadership: Cross-functional Influence")
+                                A13("Googleyness: Ethics & Chaos")
+                                Loop -.-> A10
+                                Loop -.-> A11
+                                Loop -.-> A12
+                                Loop -.-> A13
+                            end
+                            
+                            Loop ==>|"Passed All & HC"| Finish(("L6 / L7 Offer!"))
+
+                            classDef default fill:#fff,stroke:#cbd5e1,stroke-width:2px,color:#334155;
+                            classDef mainNode fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold;
+                            classDef action fill:#f8fafc,stroke:#94a3b8,stroke-width:1px,color:#475569;
+                            classDef startEnd fill:#22c55e,stroke:#fff,stroke-width:3px,color:#fff,font-weight:bold;
+                            
+                            class HR1,HR2,HM,Loop mainNode;
+                            class A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13 action;
+                            class Start,Finish startEnd;
+                    </pre>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Notes -->
+        <div class="bg-white p-6 md:p-8">
+            <h3 class="font-bold text-slate-800 mb-4 text-lg">💡 Key Reminders</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-600">
+                <div class="flex items-start">
+                    <span class="text-blue-500 mr-2">📌</span>
+                    <p><strong>STAR Method:</strong> Situation, Task, Action, Result. Keep hard metrics and data points ready.</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-blue-500 mr-2">📌</span>
+                    <p><strong>Googleyness:</strong> Show how you thrive in ambiguity, respect diverse opinions, and do the right thing.</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-blue-500 mr-2">📌</span>
+                    <p><strong>Leadership:</strong> Focus on examples where you drove change and influenced teams without formal authority.</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-blue-500 mr-2">📌</span>
+                    <p><strong>Compensation:</strong> Deflect early salary expectations. Let them state their band first during negotiations.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 1. Initialize Mermaid manually
+            mermaid.initialize({ 
+                startOnLoad: false, 
+                theme: 'base',
+                securityLevel: 'loose'
+            });
+            
+            // Render the diagram
+            await mermaid.run({
+                querySelector: '.mermaid',
+            });
+
+            // 2. Initialize Pan and Zoom interactions
+            initInteractiveCanvas();
+        });
+
+        function initInteractiveCanvas() {
+            const container = document.getElementById('zoom-container');
+            const content = document.getElementById('zoom-content');
+            
+            let scale = 1;
+            let panning = false;
+            let pointX = 0;
+            let pointY = 0;
+            let start = { x: 0, y: 0 };
+
+            function setTransform() {
+                content.style.transform = `translate3d(${pointX}px, ${pointY}px, 0) scale(${scale})`;
+            }
+
+            function centerContent() {
+                scale = 1;
+                pointX = 0; 
+                pointY = 0; 
+                content.style.transition = 'transform 0.3s ease-out';
+                setTransform();
+                setTimeout(() => content.style.transition = 'none', 300);
+            }
+
+            // --- Mouse Drag Events for Panning ---
+            container.addEventListener('mousedown', function (e) {
+                e.preventDefault();
+                start = { x: e.clientX - pointX, y: e.clientY - pointY };
+                panning = true;
+                container.classList.add('cursor-grabbing');
+                container.classList.remove('cursor-grab');
+            });
+
+            container.addEventListener('mouseup', function () {
+                panning = false;
+                container.classList.remove('cursor-grabbing');
+                container.classList.add('cursor-grab');
+            });
+
+            container.addEventListener('mouseleave', function () {
+                panning = false;
+                container.classList.remove('cursor-grabbing');
+                container.classList.add('cursor-grab');
+            });
+
+            container.addEventListener('mousemove', function (e) {
+                if (!panning) return;
+                e.preventDefault();
+                pointX = (e.clientX - start.x);
+                pointY = (e.clientY - start.y);
+                setTransform();
+            });
+
+            // --- Mouse Wheel Event for Zooming ---
+            container.addEventListener('wheel', function (e) {
+                e.preventDefault(); // Prevent page scrolling
+                
+                const rect = container.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                // Calculate mouse position relative to unscaled content
+                let xs = (mouseX - pointX) / scale;
+                let ys = (mouseY - pointY) / scale;
+
+                let delta = e.deltaY || e.wheelDelta;
+                
+                // Zoom logic
+                if (delta > 0) {
+                    scale /= 1.1; // Zoom Out
+                } else {
+                    scale *= 1.1; // Zoom In
+                }
+
+                // Clamp scale between 0.3x and 4x
+                scale = Math.max(0.3, Math.min(scale, 4));
+
+                // Adjust position so mouse remains over the same point
+                pointX = mouseX - xs * scale;
+                pointY = mouseY - ys * scale;
+                
+                setTransform();
+            }, { passive: false }); // Requires passive: false to prevent default scroll
+
+            // --- UI Button Controls ---
+            document.getElementById('btn-zoom-in').addEventListener('click', () => {
+                const rect = container.getBoundingClientRect();
+                zoomAt(rect.width / 2, rect.height / 2, 1.3);
+            });
+            
+            document.getElementById('btn-zoom-out').addEventListener('click', () => {
+                const rect = container.getBoundingClientRect();
+                zoomAt(rect.width / 2, rect.height / 2, 1 / 1.3);
+            });
+            
+            document.getElementById('btn-reset').addEventListener('click', centerContent);
+
+            function zoomAt(x, y, multiplier) {
+                let xs = (x - pointX) / scale;
+                let ys = (y - pointY) / scale;
+                
+                scale *= multiplier;
+                scale = Math.max(0.3, Math.min(scale, 4));
+                
+                pointX = x - xs * scale;
+                pointY = y - ys * scale;
+                
+                content.style.transition = 'transform 0.2s ease-out';
+                setTransform();
+                setTimeout(() => content.style.transition = 'none', 200);
+            }
+        }
+    </script>
+</body>
+</html>

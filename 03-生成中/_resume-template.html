@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eric Zheng - Resume Template</title>
+    <style>
+        /* 基础设置 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #000;
+            background: white;
+        }
+        
+        /* 页面容器 - A4 尺寸 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm 25mm;
+            background: white;
+        }
+        
+        /* 打印优化 */
+        @media print {
+            body { background: white; }
+            .page { 
+                margin: 0; 
+                padding: 15mm 20mm; 
+                width: 100%; 
+                max-width: none;
+            }
+            .no-print { display: none; }
+        }
+        
+        /* 标题层级 */
+        h1 {
+            font-size: 24pt;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        h3 {
+            font-size: 11pt;
+            margin-top: 10px;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+        
+        /* 段落和列表 */
+        p {
+            margin: 4px 0;
+            font-size: 10pt;
+        }
+        
+        ul {
+            margin-top: 4px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 3px;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        
+        /* 工具类 */
+        .date {
+            float: right;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        
+        .company {
+            font-style: italic;
+            font-size: 10pt;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            margin-bottom: 3px;
+        }
+        
+        /* 防止跨页断裂 */
+        .job-block {
+            page-break-inside: avoid;
+            margin-bottom: 10px;
+        }
+        
+        /* 页脚 */
+        .footer {
+            margin-top: 20px;
+            font-size: 9pt;
+            color: #666;
+            text-align: center;
+        }
+        
+        /* 编辑提示（打印时隐藏） */
+        .edit-hint {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 10pt;
+            border-radius: 4px;
+        }
+        
+        .variable-section {
+            border-left: 3px solid #007aff;
+            padding-left: 10px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 编辑提示（打印时隐藏） -->
+        <div class="edit-hint no-print">
+            <strong>📝 编辑提示：</strong>
+            <ul style="margin: 5px 0; padding-left: 20px;">
+                <li><strong>不可变区块</strong>：个人信息、教育背景、工作日期/公司/职位名</li>
+                <li><strong>可变区块</strong>：Summary、每个 bullet point 的描述、Core Competencies 排序</li>
+                <li>用浏览器「打印 → 另存为 PDF」导出</li>
+            </ul>
+        </div>
+
+        <!-- 个人信息：不可变 -->
+        <h1>Eric Zheng</h1>
+        <p class="contact-info">Greater New York Area | eric.zheng@drsfilms.com | WWW.DRSFILMS.COM</p>
+        <p class="contact-info">US Permanent Resident (No Sponsorship Required)</p>
+
+        <!-- Professional Summary：可变 -->
+        <div class="variable-section">
+            <h2>Professional Summary</h2>
+            <p>[根据岗位重写：Award-winning, EMBA-educated Executive Producer with 15+ years... 突出与岗位最相关的 2-3 个核心能力]</p>
+        </div>
+
+        <!-- Core Competencies：可变（排序和取舍） -->
+        <div class="variable-section">
+            <h2>Core Competencies</h2>
+            <p>[根据岗位调整排序：Integrated Campaign Delivery, Global Workstream Operations, Budgeting & P&L Management, Client Relationship Strategy, Original IP Development, Cross-Functional Leadership, Experiential & Event Production, Vendor & Talent Procurement, SOW & Margin Optimization]</p>
+        </div>
+
+        <!-- Professional Experience：结构不可变，描述可变 -->
+        <h2>Professional Experience</h2>
+        
+        <div class="job-block">
+            <span class="date">Jul 2017 — Dec 2025</span>
+            <h3>Founder & Lead Film Producer</h3>
+            <p class="company">First Light Films | Shanghai / Global</p>
+            <ul>
+                <li><strong>[根据岗位调整标题]</strong> [重写描述，突出与岗位相关的成就]</li>
+                <li><strong>[可选删减]</strong> [如果超页数，可删减早期或相关性低的 bullet]</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <span class="date">Jul 2023 — Dec 2024</span>
+            <h3>Executive Producer (Strategic Project Lead)</h3>
+            <p class="company">Final Frontier | Shanghai / Global</p>
+            <ul>
+                <li><strong>Direct-to-Client Strategy:</strong> [根据岗位调整侧重点]</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <span class="date">Apr 2022 — Jul 2023</span>
+            <h3>Lead Producer</h3>
+            <p class="company">Final Frontier | Shanghai</p>
+            <ul>
+                <li>[可根据页数删减]</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <span class="date">Jul 2017 — Dec 2018</span>
+            <h3>Project Lead (Experiential Production)</h3>
+            <p class="company">IK DESIGN Experiential & Spatial Design | Shanghai</p>
+            <ul>
+                <li>[超页数时可删减]</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <span class="date">Oct 2015 — Jul 2017</span>
+            <h3>Head of Production Operations</h3>
+            <p class="company">D'ELE Management & Production | Shanghai</p>
+            <ul>
+                <li>[超页数时可删减]</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <span class="date">Jul 2012 — Jul 2015</span>
+            <h3>Producer / Studio Operations Manager</h3>
+            <p class="company">Ker Sound Studios | Shanghai</p>
+            <ul>
+                <li>[严格单页时可删减整个 job]</li>
+            </ul>
+n        </div>
+
+        <!-- Education：不可变 -->
+        <h2>Education</h2>
+        <p><strong>Executive MBA (EMBA)</strong> | Quantic School of Business and Technology | 2024</p>
+        <p><strong>Bachelor of Film and TV Production</strong> | Shanghai University | 2008</p>
+
+        <!-- Technical Skills：可变（工具列表可增减） -->
+        <div class="variable-section">
+            <h2>Technical Skills</h2>
+            <p><strong>Tools:</strong> [根据岗位调整：Jira, Asana, Monday.com, Frame.io, Movie Magic Budgeting, Adobe Creative Suite, ERP/Financial Workflows]</p>
+            <p><strong>Languages:</strong> English (Highly Proficient), Mandarin (Native)</p>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer no-print">
+            模板版本：v1.0 | 基于 MASTER 版式 | 生成时间：2026-03-24
+        </div>
+    </div>
+</body>
+</html>

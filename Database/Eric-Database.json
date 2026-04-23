@@ -1,0 +1,658 @@
+{
+  "meta": {
+    "version": "1.0",
+    "last_sync": "2026-04-06T10:34:35.481564",
+    "source": "Eric-Database.md"
+  },
+  "experiences": [
+    {
+      "id": "fir-Jul2017-Dec2025",
+      "company": "First Light Films",
+      "title": "Founder & Executive Producer (Delegate Producer)",
+      "period": "Jul 2017 — Dec 2025",
+      "location": "Shanghai / Global",
+      "type": "film",
+      "bullets": [
+        {
+          "id": "fir-1",
+          "title": "Led Global Co-Production Financing:",
+          "text": "Architected the $2.5M financing structure for the feature film _Brief History of A Family_, successfully pitching and securing top-tier international funds including the French CNC (Aides aux Cinémas du Monde), Ile-de-France regional fund (€115K), Doha Film Institute (DFI) Post-Production Grant, and TorinoFilmLab (TFL) Co-Production Award (€50K).",
+          "tags": [
+            "film",
+            "financing",
+            "international",
+            "post_production",
+            "ai"
+          ],
+          "metrics": [
+            "$2.5M",
+            "115K",
+            "50K"
+          ]
+        },
+        {
+          "id": "fir-2",
+          "title": "Navigated Entertainment Law & Legal Delivery:",
+          "text": "Solely negotiated and executed complex international sales and distribution contracts with European agencies (Films Boutique, Tandem Films). Managed rigorous Legal Delivery, clearing Chain of Title, music cue sheets, and resolving multi-jurisdictional copyright disputes.",
+          "tags": [
+            "film",
+            "legal",
+            "international",
+            "leadership",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fir-3",
+          "title": "Directed Technical Post-Production:",
+          "text": "Coordinated a tri-nation (China, Denmark, France) post-production pipeline. Personally QC'd and managed the mastering of DCPs, KDMs, and ProRes 4444 XYZ / TIFF sequences, aggressively resolving pixel errors and blanking mistakes with European labs (Beopost, Saya/Yellow Cab).",
+          "tags": [
+            "legal",
+            "international",
+            "post_production",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fir-4",
+          "title": "Managed Censorship & Gov Relations (China):",
+          "text": "Maneuvered through China’s stringent censorship system, successfully orchestrating a cross-provincial project transfer (from Sichuan to Zhejiang Film Bureau) to secure the \"Dragon Mark\" (Public Screening License) and a 1M RMB local government cultural grant.",
+          "tags": [
+            "film",
+            "legal",
+            "international",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fir-5",
+          "title": "Established Corporate IT & ERP Infrastructure:",
+          "text": "Built the company's operational backbone from scratch, deploying Zoho (CRM/Finance), Trello, and Monday.com to standardize cross-currency budgeting, HR, and international auditing compliance.",
+          "tags": [
+            "financing",
+            "international",
+            "operations"
+          ],
+          "metrics": null
+        }
+      ]
+    },
+    {
+      "id": "fin-2019-2024",
+      "company": "Final Frontier",
+      "title": "Executive Producer",
+      "period": "2019 — 2024",
+      "location": "Shanghai / Global",
+      "type": "film",
+      "bullets": [
+        {
+          "id": "fin-1",
+          "title": "Speheaded S-Tier Commercial & CG Animation Pipelines:",
+          "text": "Led the end-to-end production of multi-million RMB/USD campaigns for top-tier global brands and tech/gaming giants (Tencent, Riot Games, miHoYo, Nike, L'Oreal).",
+          "tags": [
+            "legal",
+            "international",
+            "gaming",
+            "commercial",
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-2",
+          "title": "Managed Global Vendor Ecosystems:",
+          "text": "Bridged the gap between demanding Chinese clients and elite international animation/VFX studios (e.g., Le Cube, Serial Cut). Translated complex, high-pressure client briefs into actionable creative directives for artists across Europe and South America.",
+          "tags": [
+            "international",
+            "leadership",
+            "cg_animation"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-3",
+          "title": "Drove P&L and Commercial Scoping (SOW):",
+          "text": "Owned the bidding, budgeting, and margin optimization process. Successfully negotiated Statements of Work (SOW) and delivery schedules, ensuring healthy cash flow and profitability for high-volume, concurrent workstreams.",
+          "tags": [
+            "financing",
+            "commercial"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-4",
+          "title": "Mentored Cross-Functional Teams:",
+          "text": "Built and managed a robust internal team of producers and account managers (Catherine Fong, Keira, Phoenix, Lisa Wang, etc.), serving as the ultimate escalation point for creative disputes, timeline crises, and client relationship management. **Production Coordinator / Junior Producer** _KerSound Studios / D'ELE / Independent | 2015 — 2017_",
+          "tags": [
+            "legal",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-5",
+          "title": "Coordinated Award-Winning Feature Film:",
+          "text": "Served as Production Coordinator for _End of Summer_ (西小河的夏天), managing on-set logistics, crew scheduling, and cross-departmental operations, contributing to its win of the 2017 Busan International Film Festival Audience Choice Award.",
+          "tags": [
+            "film",
+            "international",
+            "operations"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-6",
+          "title": "Executed International TVC Campaigns:",
+          "text": "Facilitated cross-border commercial shoots, coordinating international directors, DOPs, and styling teams for clients like Coach and Huawei. Handled casting, equipment rentals, and on-set bilingual coordination.",
+          "tags": [
+            "legal",
+            "international",
+            "commercial",
+            "leadership",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-7",
+          "title": "When:",
+          "text": "2017 – 2024",
+          "tags": [],
+          "metrics": null
+        },
+        {
+          "id": "fin-8",
+          "title": "What/Client:",
+          "text": "Independent Feature Film (Co-production: China, France, Denmark, Qatar) / Budget: ~$2.5M USD.",
+          "tags": [
+            "film",
+            "financing",
+            "international"
+          ],
+          "metrics": [
+            "$2.5M"
+          ]
+        },
+        {
+          "id": "fin-9",
+          "title": "Why & How:",
+          "text": "Required bridging extreme gaps between Chinese independent filmmaking constraints and rigorous European funding/auditing standards. Achieved through relentless global pitching, cross-cultural legal negotiations, and hands-on technical supervision.",
+          "tags": [
+            "film",
+            "financing",
+            "legal",
+            "international",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-10",
+          "title": "Scope:",
+          "text": "Managed a multi-national crew and post-production labs across 3 continents, dealing with multi-currency budgets (RMB, EUR, DKK, USD).",
+          "tags": [
+            "financing",
+            "post_production",
+            "leadership"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-11",
+          "title": "Ownership:",
+          "text": "Drove the entire financing plan, government censorship clearance, international legal delivery, and technical mastering.",
+          "tags": [
+            "financing",
+            "legal",
+            "international",
+            "post_production"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-12",
+          "title": "Business Impact:",
+          "text": "Made history as the first Chinese directorial debut since 2006 to be dual-selected for the Sundance Film Festival (World Cinema Dramatic Competition) and Berlinale (Panorama). Successfully secured global distribution. **Project 2: Tencent \"Dungeon & Fighter\" (DNF) & \"Honor of Kings\" CG Campaigns**",
+          "tags": [
+            "film",
+            "international",
+            "gaming",
+            "commercial",
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-13",
+          "title": "When:",
+          "text": "2023 – 2024",
+          "tags": [],
+          "metrics": null
+        },
+        {
+          "id": "fin-14",
+          "title": "What/Client:",
+          "text": "High-end CG character trailers and promotional animations for Tencent IEG (TiMi/Morefun Studios).",
+          "tags": [
+            "gaming",
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-15",
+          "title": "Why & How:",
+          "text": "The client required hyper-stylized, action-heavy 3D animations within brutal turnaround times. Managed expectations by acting as a buffer between Tencent's strict IP requirements and international animation vendors.",
+          "tags": [
+            "legal",
+            "international",
+            "gaming",
+            "leadership",
+            "cg_animation"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-16",
+          "title": "Scope:",
+          "text": "Managed budgets over 1M+ RMB per asset, coordinating dozens of remote artists, animators, and sound designers. 500K USD in total",
+          "tags": [
+            "financing",
+            "leadership"
+          ],
+          "metrics": [
+            "500K"
+          ]
+        },
+        {
+          "id": "fin-17",
+          "title": "Ownership:",
+          "text": "Lead Executive Producer. Drove the pitch, locked the SOW, supervised the daily WIP reviews (via Monday.com/SyncSketch), and ensured bilingual script/VO accuracy.",
+          "tags": [
+            "legal",
+            "leadership",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-18",
+          "title": "Business Impact:",
+          "text": "Delivered top-tier visual assets that resonated with millions of players, securing Final Frontier’s position as a preferred vendor in Tencent’s highly competitive global procurement pool. **Project 3: Nike 618 & Dragon Campaigns (via AKQA)**",
+          "tags": [
+            "international",
+            "gaming",
+            "commercial",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-19",
+          "title": "When:",
+          "text": "2023",
+          "tags": [],
+          "metrics": null
+        },
+        {
+          "id": "fin-20",
+          "title": "What/Client:",
+          "text": "Mixed-media launch assets / Budget: ~1M RMB.",
+          "tags": [
+            "financing"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-21",
+          "title": "Scope:",
+          "text": "Fast-turnaround digital assets, KV mocks, and 30s animations leveraging global Nike toolkits.",
+          "tags": [
+            "international",
+            "cg_animation"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-22",
+          "title": "Ownership:",
+          "text": "Led budget negotiations, resource allocation, and direct communication with AKQA creatives to align on visual tone and deliverables.",
+          "tags": [
+            "financing",
+            "legal"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-23",
+          "title": "Business Impact:",
+          "text": "Successfully delivered high-energy, culturally relevant assets for Nike's crucial China e-commerce festivals, maintaining margins despite agency pressure.",
+          "tags": [
+            "film",
+            "international",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-24",
+          "title": "Production & Operations:",
+          "text": "Global Workstream Operations, Integrated Campaign Delivery, Cross-border Co-production, Post-Production Mastering, Vendor & Talent Procurement.",
+          "tags": [
+            "international",
+            "post_production",
+            "commercial",
+            "operations",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-25",
+          "title": "Commercial & Legal:",
+          "text": "Entertainment Law (Contracts, Chain of Title, IP Clearance), Budgeting & P&L Management, SOW & Margin Optimization, Government Subsidy Applications.",
+          "tags": [
+            "financing",
+            "legal",
+            "commercial",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-26",
+          "title": "Risk & Gov Relations:",
+          "text": "Chinese Censorship Clearance (Dragon Mark), Crisis Management, Cross-cultural Conflict Resolution. **Tools & Software:**",
+          "tags": [
+            "legal"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-27",
+          "title": "Project Management:",
+          "text": "Monday.com, Trello, Asana, Jira, Slack, SyncSketch.",
+          "tags": [],
+          "metrics": null
+        },
+        {
+          "id": "fin-28",
+          "title": "Finance & ERP:",
+          "text": "Movie Magic Budgeting, Advanced Excel/Numbers.",
+          "tags": [
+            "film",
+            "financing",
+            "operations"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-29",
+          "title": "Creative & Post-Production:",
+          "text": "Adobe Creative Suite (Premiere Pro, After Effects, Illustrator), Figma.",
+          "tags": [
+            "post_production"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-30",
+          "title": "AI Integration:",
+          "text": "Openclaw, Google Gemini, Midjourney, various AI-driven localization and workflow automation tools. Runway, Higgsfield, Veo, Nano Banana **Languages:**",
+          "tags": [
+            "legal",
+            "operations",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-31",
+          "title": "Chinese (Mandarin):",
+          "text": "Native",
+          "tags": [],
+          "metrics": null
+        },
+        {
+          "id": "fin-32",
+          "title": "English:",
+          "text": "Fluent (Full Professional/Academic Proficiency - highly adept at drafting complex legal amendments, pitch decks, and technical production briefs).",
+          "tags": [
+            "legal"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-33",
+          "title": "Gaming & Tech:",
+          "text": "Tencent (TiMi, Morefun, IEG), Riot Games (_League of Legends Mobile_), miHoYo (_Genshin Impact, Zenless Zone Zero, Honkai_), NetEase (_Naraka: Bladepoint_), Huawei, vivo, NIO, Ford, 3iRobotix.",
+          "tags": [
+            "gaming",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-34",
+          "title": "Luxury, Fashion & Beauty:",
+          "text": "L'Oreal, Estée Lauder, Cartier, Coach.",
+          "tags": [],
+          "metrics": null
+        },
+        {
+          "id": "fin-35",
+          "title": "FMCG & Lifestyle:",
+          "text": "Nike, Heineken, Durex, Spotify, Zhiben (至本), Airbnb, Ritz Carlton, Crocs.",
+          "tags": [
+            "cg_animation",
+            "ai"
+          ],
+          "metrics": null
+        },
+        {
+          "id": "fin-36",
+          "title": "Agencies :",
+          "text": "AKQA, BBH, VMLY&R, Publicis (Prodigious), Isobar, M&C Saatchi, Havas. Here is the comprehensive and professionally formatted Key Project List & Case Studies for Eric Zheng, detailing 11 major projects across international feature films, global commercial campaigns, and top-tier gaming cinematics.",
+          "tags": [
+            "film",
+            "international",
+            "gaming",
+            "commercial",
+            "ai"
+          ],
+          "metrics": null
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "independent-feature-",
+      "title": "Independent Feature Film: Brief History of A Family (家庭简史)",
+      "when": "2017 – 2024",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "film",
+        "financing",
+        "international"
+      ]
+    },
+    {
+      "id": "tencent-games:-dung",
+      "title": "Tencent Games: Dungeon & Fighter (DNF) CG Campaigns",
+      "when": "Dec 2023 – Jun 2024",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "gaming",
+        "commercial",
+        "cg_animation",
+        "ai"
+      ]
+    },
+    {
+      "id": "tencent-games:-hono",
+      "title": "Tencent Games: Honor of Kings (HOK) CNY Collage Film",
+      "when": "Dec 2023 – Jan 2024",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "film",
+        "international",
+        "gaming",
+        "commercial",
+        "cg_animation",
+        "ai"
+      ]
+    },
+    {
+      "id": "mihoyo:-zenless-zon",
+      "title": "miHoYo: Zenless Zone Zero (ZZZ) World-Building Promos",
+      "when": "Mar 2023 – Sep 2024",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "gaming",
+        "cg_animation"
+      ]
+    },
+    {
+      "id": "nike:-cny-animal-ava",
+      "title": "Nike: CNY Animal Avatars (Year of the Dragon)",
+      "when": "Oct 2023 – Jan 2024",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "commercial",
+        "cg_animation",
+        "ai"
+      ]
+    },
+    {
+      "id": "nike-x-akqa:-sports",
+      "title": "Nike x AKQA: Sportschella (SBW) Immersive Web Game",
+      "when": "Apr 2023 – Jul 2023",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "legal",
+        "gaming"
+      ]
+    },
+    {
+      "id": "netease-games:-nara",
+      "title": "NetEase Games: Naraka: Bladepoint Global Campaigns",
+      "when": "2021 – 2024",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "film",
+        "legal",
+        "international",
+        "gaming",
+        "commercial",
+        "cg_animation",
+        "ai"
+      ]
+    },
+    {
+      "id": "3irobotix:-premium-p",
+      "title": "3iRobotix: Premium Product Launch Campaign",
+      "when": "Mar 2023 – Oct 2023",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "film",
+        "commercial",
+        "cg_animation",
+        "ai"
+      ]
+    },
+    {
+      "id": "bmw:-nft/coin-teaser",
+      "title": "BMW: NFT/Coin Teaser Film",
+      "when": "Aug 2022 – Nov 2022",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "film",
+        "cg_animation"
+      ]
+    },
+    {
+      "id": "estée-lauder:-sp25-",
+      "title": "Estée Lauder: SP25 China Pride Campaign",
+      "when": "May 2024 – Nov 2024",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "international",
+        "commercial",
+        "cg_animation",
+        "ai"
+      ]
+    },
+    {
+      "id": "independent-feature-",
+      "title": "Independent Feature Film: This Timeworn Land (流俗地)",
+      "when": "Early 2025",
+      "client": null,
+      "budget": null,
+      "tags": [
+        "film"
+      ]
+    }
+  ],
+  "skills": {
+    "production": [
+      "** Global Workstream Operations",
+      "Integrated Campaign Delivery",
+      "Cross-border Co-production",
+      "Post-Production Mastering",
+      "Vendor & Talent Procurement."
+    ],
+    "commercial": [
+      "** Entertainment Law (Contracts",
+      "Chain of Title",
+      "IP Clearance)",
+      "Budgeting & P&L Management",
+      "SOW & Margin Optimization",
+      "Government Subsidy Applications."
+    ],
+    "risk_gov": [
+      "** Chinese Censorship Clearance (Dragon Mark)",
+      "Crisis Management",
+      "Cross-cultural Conflict Resolution."
+    ],
+    "tools": [
+      "** Monday.com",
+      "Trello",
+      "Asana",
+      "Jira",
+      "Slack",
+      "SyncSketch.",
+      "**   Movie Magic Budgeting",
+      "Advanced Excel/Numbers.",
+      "** Adobe Creative Suite (Premiere Pro",
+      "After Effects",
+      "Illustrator)",
+      "Figma.",
+      "** Openclaw",
+      "Google Gemini",
+      "Midjourney",
+      "various AI-driven localization and workflow automation tools. Runway",
+      "Higgsfield",
+      "Veo",
+      "Nano Banana"
+    ],
+    "languages": []
+  },
+  "clients": {}
+}

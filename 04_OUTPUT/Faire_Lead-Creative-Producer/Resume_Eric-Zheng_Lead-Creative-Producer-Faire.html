@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Zheng - Lead Creative Producer</title>
+    
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-black: #111111;
+            --secondary-grey: #333333;
+            --light-grey: #666666;
+            --border-color: #d0d0d0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+        }
+        a {
+            text-decoration: none !important;
+            color: inherit;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--primary-black);
+            line-height: 1.45;
+            font-size: 9.2pt;
+            font-weight: 400;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 30px auto;
+            padding: 40px 65px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        h1, h2, h3, .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-black);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #555;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--primary-black);
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 34pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 14pt;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--secondary-grey);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-line {
+            font-size: 8.5pt;
+            color: var(--light-grey);
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+
+        .contact-line span.separator {
+            margin: 0 8px;
+            color: var(--border-color);
+        }
+
+        h3 {
+            font-size: 15pt;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 0.5px solid var(--primary-black);
+            letter-spacing: 0.8px;
+        }
+
+        section {
+            margin-bottom: 18px;
+        }
+
+        .profile-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .profile-list li {
+            margin-bottom: 7px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .profile-list strong {
+            font-weight: 600;
+        }
+
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .competency-item {
+            font-size: 8pt;
+            color: var(--secondary-grey);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            background: #f8f8f8;
+            padding: 6px 5px;
+            text-align: center;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+        }
+
+        .job-entry {
+            margin-bottom: 15px;
+            break-inside: avoid;
+        }
+
+        .job-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .role-title {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+
+        .date-range {
+            font-size: 8.3pt;
+            color: var(--light-grey);
+            white-space: nowrap;
+            margin-left: 12px;
+        }
+
+        .company-row {
+            margin-bottom: 4px;
+        }
+
+        .company-name {
+            color: var(--secondary-grey);
+            font-size: 8.8pt;
+            font-style: normal;
+        }
+
+        .exp-list, .key-achievement-list {
+            padding-left: 16px;
+            margin-top: 4px;
+        }
+
+        .exp-list li, .key-achievement-list li {
+            margin-bottom: 4px;
+            line-height: 1.42;
+            text-align: justify;
+        }
+
+        .key-achievement {
+            margin-top: 8px;
+            padding: 10px 15px;
+            background-color: #f6f6f6;
+            border-left: 3px solid var(--primary-black);
+        }
+
+        .key-achievement-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--primary-black);
+            font-size: 10.5pt;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .key-achievement-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        .key-achievement-list li {
+            text-indent: -8px;
+            padding-left: 8px;
+        }
+
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .edu-item, .skill-item {
+            margin-bottom: 10px;
+        }
+
+        .skill-category {
+            display: block;
+            font-weight: 600;
+            font-size: 8.7pt;
+            margin-bottom: 2px;
+        }
+
+        .skill-text, .company-name, .edu-item div {
+            line-height: 1.45;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                width: auto;
+                min-height: auto;
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body style="overflow-wrap: break-word; -webkit-nbsp-mode: space; line-break: after-white-space;">
+    <div class="page">
+        <!-- Header Section -->
+        <header>
+            <h1>Eric Zheng</h1>
+            <h2>Lead Creative Producer | Creative Operations & Cross-Functional Production</h2>
+            <div class="contact-line">
+                Greater New York Area <span class="separator">|</span>
+                <a href="mailto:eric.zheng@drsfilms.com" style="text-decoration:none; color:inherit;">eric.zheng@drsfilms.com</a> <span class="separator">|</span>
+                <a href="https://www.drsfilms.com" target="_blank" style="color: inherit;">www.drsfilms.com</a> <span class="separator">|</span>
+                US Permanent Resident
+            </div>
+        </header>
+
+        <!-- Executive Profile Section -->
+        <section>
+            <h3>Executive Profile</h3>
+            <ul class="profile-list">
+                <li><strong>End-to-End Creative Production:</strong> 15+ years owning the full production lifecycle — from concept and creative development through multi-format asset delivery, localization, and global launch — for feature films, branded campaigns, and cross-channel content portfolios.</li>
+                <li><strong>Cross-Functional Orchestration:</strong> Led and aligned diverse stakeholder groups — creative directors, marketers, product teams, legal, finance, and external vendor networks — across multiple time zones and regulatory environments, ensuring timely decisions and clear accountability.</li>
+                <li><strong>Scalable Systems &amp; Workflow Design:</strong> Built and optimized repeatable production workflows and SOPs (Jira/Asana) that reduced cycle time by 15% while maintaining premium quality — directly applicable to high-velocity marketing campaign environments.</li>
+                <li><strong>Budget Stewardship &amp; Vendor Management:</strong> Owned end-to-end financial management for productions and content portfolios ranging from $150K to $6M+, negotiating favorable terms with global vendors and maintaining margin discipline across complex multi-party agreements.</li>
+            </ul>
+        </section>
+
+        <!-- Core Competencies -->
+        <section>
+            <h3>Core Competencies</h3>
+            <div class="competencies-grid">
+                <div class="competency-item">End-to-End Production</div>
+                <div class="competency-item">Cross-Functional Alignment</div>
+                <div class="competency-item">Scalable Systems &amp; SOPs</div>
+                <div class="competency-item">Budget Stewardship</div>
+                <div class="competency-item">Vendor Management</div>
+                <div class="competency-item">Localization &amp; Compliance</div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section>
+            <h3>Professional Experience</h3>
+
+            <!-- Job 1 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Founder &amp; Producer</div>
+                    <div class="date-range">Jul 2017 — Present</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">First Light Films | Shanghai / Los Angeles / London</span>
+                </div>
+                <ul class="exp-list">
+                    <li><strong>End-to-End Production Leadership:</strong> Built and led a Sundance/Berlinale-selected feature film from 0-to-1 through global release — securing multi-territory financing ($2.5M+), managing cross-border production across three countries, and delivering Tier-1 theatrical and digital distribution across 60+ territories.</li>
+                    <li><strong>Localization &amp; Compliance Management:</strong> Architected and operated the full production pipeline across three regulatory environments — managing chain-of-title documentation, territorial rights, and legal compliance — with zero critical delivery failures.</li>
+                    <li><strong>Technical Post-Production &amp; Asset Delivery:</strong> Bridged creative vision with technical execution across DI, VFX, and sound workflows — managing DCP/KDM delivery standards and hands-on QC with international labs to ensure theatrical-grade global distribution.</li>
+                </ul>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Executive Producer</div>
+                    <div class="date-range">Jul 2023 — Dec 2024</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">Final Frontier | Shanghai / Global (US, EU, LATAM)</span>
+                </div>
+                <ul class="exp-list">
+                    <li><strong>High-Visibility Campaign Delivery:</strong> Led end-to-end production of multi-million-dollar branded campaigns for top-tier global brands and tech/gaming clients (Tencent, Riot Games, miHoYo, Nike, L'Oreal, Estée Lauder) — from creative brief through multi-format asset delivery and launch.</li>
+                    <li><strong>Cross-Functional Alignment:</strong> Bridged demanding client stakeholders with elite international animation/VFX studios across Europe and the Americas — translating complex briefs into actionable creative directives and ensuring timely cross-functional decisions.</li>
+                    <li><strong>Portfolio Revenue Growth:</strong> Generated $6M+ USD in portfolio revenue within 18 months by pivoting the studio from a traditional vendor model to a Direct-to-Client Hybrid Agency model — owning P&amp;L, client relationships, and production operations end-to-end.</li>
+                </ul>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Lead Producer</div>
+                    <div class="date-range">Apr 2022 — Jul 2023</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">Final Frontier | Shanghai / Global</span>
+                </div>
+                <ul class="exp-list">
+                    <li><strong>Concurrent Campaign Management:</strong> Managed concurrent delivery of 10+ premium integrated campaigns annually for Nike, BMW, vivo, NetEase, and POP MART — balancing creative quality, timeline, and budget across multiple simultaneous workstreams.</li>
+                    <li><strong>SOP Optimization &amp; Scalable Workflows:</strong> Optimized production SOPs using Jira/Asana, reducing production cycle time by 15% while maintaining premium quality standards — building systems that scaled across a growing team.</li>
+                </ul>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Head of Production</div>
+                    <div class="date-range">Oct 2015 — Jul 2017</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">D'ELE Management &amp; Production | Shanghai</span>
+                </div>
+                <ul class="exp-list">
+                    <li><strong>0-to-1 Business Scaling:</strong> Launched and scaled the agency's internal content division to $1.5M+ revenue in year one — establishing foundational financial workflows, vendor compliance protocols, and client billing visibility from the ground up.</li>
+                </ul>
+            </div>
+            
+            <!-- Job 5 -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">Studio Operations Manager</div>
+                    <div class="date-range">Jul 2012 — Jul 2015</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">Ker Sound Studios | Shanghai</span>
+                </div>
+                <ul class="exp-list">
+                    <li><strong>Global Asset Delivery:</strong> Supervised 200+ hours of assets for feature films, commercials, and AAA gaming titles — acting as strategic liaison between European leadership and local clients to ensure world-class technical standards.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education & Skills Grid -->
+        <section>
+            <div class="bottom-grid">
+                <div>
+                    <h3>Education &amp; Affiliations</h3>
+                    
+                    <div class="edu-item">
+                        <div class="role-title">NYU Stern School of Business</div>
+                        <div class="company-name">Executive MBA (EMBA) | 2026</div>
+                    </div>
+                    
+                    <div class="edu-item">
+                        <div class="role-title">Shanghai University</div>
+                        <div class="company-name">B.A. Film &amp; TV Production | 2008</div>
+                    </div>
+                    
+                    <div class="edu-item" style="margin-top: 15px;">
+                        <span class="skill-category">Selected Accolades</span>
+                        <div class="skill-text" style="line-height: 1.5;">
+                            Sundance (Grand Jury Nominee), Berlinale (Panorama), Noir in Festival (Best Film Winner), Camerimage (Best Debut Nominee), Zurich Film Festival (Special Mention)
+                        </div>
+                    </div>
+                    
+                    <div class="edu-item" style="margin-top: 10px;">
+                        <span class="skill-category">Affiliations</span>
+                        <div class="skill-text">Member of Gold House</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Skills</h3>
+                    
+                    <div class="skill-item">
+                        <span class="skill-category">Core Expertise</span>
+                        <div class="skill-text">End-to-End Creative Production, Cross-Functional Leadership, Integrated Campaign Delivery, Scalable Workflow Design, Vendor &amp; Talent Procurement, Budget Management, Localization &amp; Compliance, Stakeholder Alignment</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-category">Tools &amp; Software</span>
+                        <div class="skill-text">Production &amp; Project Management: Jira, Asana, Monday.com, ShotGrid, Airtable</div>
+                        <div class="skill-text">Budgeting &amp; Scheduling: Movie Magic Budgeting &amp; Scheduling, FastTrack Schedule</div>
+                        <div class="skill-text">Post-Production &amp; Asset Management: Frame.io, Adobe Creative Suite</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+<!-- 
+Generated: 2026-04-08
+Job: Lead Creative Producer @ Faire
+Template: resume-template-master-locked.html
+Output: Resume_Eric-Zheng_Lead-Creative-Producer-Faire.html
+-->
+
+</body>
+</html>
