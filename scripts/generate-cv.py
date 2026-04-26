@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-generate-cv.py - 简历生成工具 v5.1
-使用 master-locked 模板，严格锁定结构，只替换 3 类动态内容。
+generate-cv.py - 简历生成工具 v6.0
+读 analysis.json，6 分支系统，生成定制 HTML 简历
 """
 
 import json
@@ -17,21 +17,20 @@ def load_database():
         return json.load(f)
 
 
-def parse_analysis(analysis_path):
-    content = analysis_path.read_text(encoding='utf-8')
-    import re
-    type_match = re.search(r'\*\*主要类型\*\*: (.+)', content)
-    job_type = type_match.group(1).strip() if type_match else 'general'
-    bullet_pattern = r'- \[ \] `([^`]+)`'
-    recommended_bullets = re.findall(bullet_pattern, content)
-    return {'job_type': job_type, 'recommended_bullets': recommended_bullets}
+def parse_analysis_json(analysis_path):
+    """读取 analysis.json"""
+    with open(analysis_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return {
+        'job_branch': data['job_analysis']['branch'],
+        'key_bullets': data['recommendations']['key_bullets'],
+    }
 
 
-def generate_dynamic_content(job_type):
-    """只生成 3 类动态内容：Profile、Competencies、Core Expertise/Tools"""
-    jt = job_type.lower().replace(' ', '_')
+def generate_dynamic_content(job_branch):
+    """6 分支动态内容生成"""
 
-    if 'ai' in jt:
+    if job_branch == 'ai_research':
         profile = [
             ('AI-Creative Bridge', 'Award-winning Executive Producer with 15+ years at the intersection of cinematic storytelling and emerging technology. Produced Sundance and Berlinale-selected features while pioneering AI-powered production workflows.'),
             ('Technical Production Expertise', 'Hands-on experience with generative AI tools (Openclaw, Gemini, Midjourney, Runway, Higgsfield, Veo) and ML-integrated pipelines. Proven ability to translate cutting-edge AI capabilities into professional film, TV, and VFX workflows.'),
@@ -50,7 +49,8 @@ def generate_dynamic_content(job_type):
         ]
         core_expertise = 'Global Financing & Co-Production, Chain of Title & Legal Delivery, Technical Post & 4.5K Mastering, AI Tool Integration, Cross-Functional Leadership, Integrated Campaign Delivery, Vendor & Talent Procurement, SOW & Margin Optimization'
         tools_software = 'Movie Magic Budgeting & Scheduling, Jira (Power User), Asana, Monday.com, frame.io, Adobe Creative Suite, Openclaw, Google Gemini, Midjourney, Runway, Higgsfield, Veo'
-    elif 'gaming' in jt:
+
+    elif job_branch == 'gaming':
         profile = [
             ('S-Tier Gaming Production', 'Executive Producer with extensive experience leading high-end CG and animation for top-tier gaming IP including Riot Games, Tencent, miHoYo, and NetEase.'),
             ('Global Studio Orchestration', 'Directed multi-region vendor ecosystems across Europe, South America, and Asia, bridging creative ambition with production discipline for high-pressure game marketing campaigns.'),
@@ -69,7 +69,68 @@ def generate_dynamic_content(job_type):
         ]
         core_expertise = 'Gaming IP Production, CG Animation Pipeline, Global Vendor Orchestration, Budgeting & P&L Management, Cross-Functional Leadership, Integrated Campaign Delivery, Technical Post Oversight, Client Relationship Strategy'
         tools_software = 'Jira, Asana, Monday.com, SyncSketch, frame.io, Adobe Creative Suite, Movie Magic Budgeting, Unreal Engine (familiar), Various AI Tools'
-    else:
+
+    elif job_branch == 'production_ops':
+        profile = [
+            ('Operations-Focused Production Leader', 'Executive Producer with deep expertise in production operations, workflow optimization, and cross-functional team leadership. Proven track record scaling creative operations for high-volume, multi-territory content pipelines.'),
+            ('Process & Pipeline Architecture', 'Engineered standardized production workflows across live-action, animation, and VFX. Implemented project management systems (Jira, Asana, Monday.com) that increased team efficiency and reduced delivery variance.'),
+            ('Global Resource Coordination', 'Managed distributed production teams across multiple time zones, orchestrating vendors, freelancers, and internal resources to deliver complex projects on scope, on time, and on budget.')
+        ]
+        competencies = [
+            'Production Operations & Workflow',
+            'Team Leadership & Development',
+            'Process Optimization & Scaling',
+            'Budgeting & P&L Management ($6M+)',
+            'Cross-Functional Coordination',
+            'Vendor & Talent Procurement',
+            'Project Management Systems',
+            'Risk Mitigation & QC',
+            'Executive Production Leadership'
+        ]
+        core_expertise = 'Production Operations, Workflow Architecture, Team Leadership, Budgeting & P&L Management, Cross-Functional Coordination, Vendor Management, Process Optimization, Risk Mitigation, Quality Control'
+        tools_software = 'Jira (Power User), Asana, Monday.com, Movie Magic Budgeting & Scheduling, frame.io, Adobe Creative Suite, ERP/Financial Workflows, Microsoft Office Suite'
+
+    elif job_branch == 'agency_pr':
+        profile = [
+            ('Festival Strategy & Awards Campaign', 'Film producer and creative executive with 10+ years orchestrating award-winning content from concept to global release. Dual-selected at Sundance Film Festival and Berlinale, with deep fluency in festival strategy, awards campaigns, and prestige press positioning.'),
+            ('Client Leadership & Team Development', 'Seasoned production leader and client partner who has managed multi-million-dollar campaigns for global brands (Nike, Tencent, L\'Oréal) while building and mentoring high-performing teams. Adept at navigating complex client relationships and delivering on scope, time, and budget.'),
+            ('Media Relations & Cross-Cultural Storytelling', 'Bilingual entertainment strategist with a cultivated network spanning US, European, and Chinese media landscapes. Experience managing international press campaigns, coordinating red-carpet events, and leveraging press relationships for maximum impact.')
+        ]
+        competencies = [
+            'PR Campaign Strategy',
+            'Film Festival Strategy',
+            'Client Relations & Account Management',
+            'Media Outreach & Press Relations',
+            'Award Season Campaigning',
+            'Brand Partnerships & Co-Marketing',
+            'Talent & Team Management',
+            'Content Strategy & Narrative',
+            'Creative Direction & Innovation'
+        ]
+        core_expertise = 'PR Campaign Strategy, Film Festival Strategy, Client Relations, Media Outreach, Award Season Campaigning, Brand Partnerships, Talent Management, Content Strategy, Creative Direction, Cross-Cultural Communications'
+        tools_software = 'Jira, Asana, Monday.com, Adobe Creative Suite, Cision (familiar), Muck Rack (familiar), Microsoft Office Suite, Google Workspace, Social Media Management Tools'
+
+    elif job_branch == 'film':
+        profile = [
+            ('Founder-Minded Builder & Operator', 'EMBA-educated Executive Producer with 15+ years of experience specialized in architecting 0-to-1 creative engines. Proven ownership in orchestrating $6M+ global portfolios and securing $2.5M+ in production financing through prestige international backing.'),
+            ('Multi-Format Pipeline Architecture', 'Engineered and scaled complex production workflows across live-action features, high-fidelity 3D animation, and VFX. Successfully translated the artistic rigor of international cinema into synchronized global delivery engines.'),
+            ('Global Compliance & Technical Delivery', 'Architected cross-border legal and financial frameworks, taking extreme ownership of multi-territory Chain of Title compliance. Directed global post-production pipelines to meet Tier-1 theatrical and digital delivery standards.')
+        ]
+        competencies = [
+            'Global Financing & Co-Production',
+            'Chain of Title & Legal Delivery',
+            'Technical Post & 4.5K Mastering',
+            'Festival Strategy & Awards Campaigns',
+            'Budgeting & P&L Management ($6M+)',
+            'Regulatory Affairs & Gov. Grants',
+            'Creative Workflow Optimization',
+            'Vendor & Talent Procurement',
+            'SOW & Margin Optimization'
+        ]
+        core_expertise = 'Global Financing & Co-Production, Chain of Title & Legal Delivery, Technical Post & 4.5K Mastering, Festival Strategy, Budgeting & P&L Management, Cross-Functional Leadership, Integrated Campaign Delivery, Vendor & Talent Procurement, SOW & Margin Optimization'
+        tools_software = 'Movie Magic Budgeting & Scheduling, Jira (Power User), Asana, Monday.com, frame.io, Adobe Creative Suite, ERP/Financial Workflows'
+
+    else:  # general
         profile = [
             ('Founder-Minded Builder & Operator', 'EMBA-educated Executive Producer with 15+ years of experience specialized in architecting 0-to-1 creative engines. Proven ownership in orchestrating $6M+ global portfolios and securing $2.5M+ in production financing through prestige international backing.'),
             ('Multi-Format Pipeline Architecture', 'Engineered and scaled complex production workflows across live-action features, high-fidelity 3D animation, and VFX. Successfully translated the artistic rigor of international cinema into synchronized global delivery engines.'),
@@ -93,6 +154,7 @@ def generate_dynamic_content(job_type):
 
 
 def score_bullet(bullet, recommended_ids):
+    """评分：推荐 ID 匹配得高分"""
     score = 0
     if bullet.get('id') in recommended_ids:
         score += 100
@@ -103,7 +165,8 @@ def score_bullet(bullet, recommended_ids):
 
 
 def select_bullets(exp, recommended_ids, max_bullets=3):
-    candidates = exp.get('all_bullets') or exp.get('master_bullets') or []
+    """从经历中选择最相关的 bullets"""
+    candidates = exp.get('master_bullets', []) + exp.get('extra_bullets', [])
     ranked = sorted(candidates, key=lambda b: score_bullet(b, recommended_ids), reverse=True)
     selected = []
     seen = set()
@@ -127,14 +190,13 @@ def bullets_html(exp, recommended_ids, max_bullets=3):
 
 
 def fill_template(template, analysis, db):
-    profile, competencies, core_expertise, tools_software = generate_dynamic_content(analysis['job_type'])
+    profile, competencies, core_expertise, tools_software = generate_dynamic_content(analysis['job_branch'])
 
-    # 固定 subtitle（不随岗位类型变）
     subtitle = 'Executive Producer | Global Creative Operations'
 
     exps = db.get('experiences', [])
     while len(exps) < 6:
-        exps.append({'title': '', 'company': '', 'period': '', 'all_bullets': []})
+        exps.append({'title': '', 'company': '', 'period': '', 'master_bullets': [], 'extra_bullets': []})
 
     replacements = {
         '{{HEADER_SUBTITLE}}': subtitle,
@@ -164,7 +226,7 @@ def fill_template(template, analysis, db):
         if exp.get('location'):
             company_line = f"{company_line} | {exp.get('location')}"
         replacements[f'{{{{JOB{i}_COMPANY}}}}'] = company_line
-        replacements[f'{{{{JOB{i}_BULLETS}}}}'] = bullets_html(exp, analysis['recommended_bullets'], 3)
+        replacements[f'{{{{JOB{i}_BULLETS}}}}'] = bullets_html(exp, analysis['key_bullets'], 3)
         if i == 1:
             replacements['{{JOB1_ACHIEVEMENT_BLOCK}}'] = '''            <div class="key-achievement">
                 <div class="key-achievement-title"><strong>Key Achievement: Produced Feature Film - "Brief History of A Family" (<a href="https://www.imdb.com/title/tt26749327/" target="_blank">IMDB</a>)</strong></div>
@@ -178,7 +240,7 @@ def fill_template(template, analysis, db):
     replacements['{{GENERATION_INFO}}'] = f'''
 <!-- 
 Generated: {datetime.now().isoformat()}
-Job Type: {analysis['job_type']}
+Job Branch: {analysis['job_branch']}
 Database: experience-bank-final.json
 Template: resume-template-master-locked.html
 -->
@@ -191,8 +253,8 @@ Template: resume-template-master-locked.html
 
 def main():
     parser = argparse.ArgumentParser(description='Generate CV from master-locked template')
-    parser.add_argument('--analysis', '-a', required=True)
-    parser.add_argument('--output', '-o', required=True)
+    parser.add_argument('--analysis', '-a', required=True, help='Path to analysis.json')
+    parser.add_argument('--output', '-o', required=True, help='Output directory')
     args = parser.parse_args()
 
     analysis_path = Path(args.analysis)
@@ -200,7 +262,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     db = load_database()
-    analysis = parse_analysis(analysis_path)
+    analysis = parse_analysis_json(analysis_path)
     template_path = BASE / '01-MASTER' / 'resume-template-master-locked.html'
     template = template_path.read_text(encoding='utf-8')
     result = fill_template(template, analysis, db)
@@ -210,12 +272,14 @@ def main():
 
     summary = out_dir / 'generation-summary.md'
     summary.write_text(
-        f"# 生成摘要\n\n- 时间: {datetime.now().isoformat()}\n- Job Type: {analysis['job_type']}\n- Template: {template_path.name}\n- Database: experience-bank-final.json\n- Positions: {len(db.get('experiences', []))}\n",
+        f"# 生成摘要\n\n- 时间: {datetime.now().isoformat()}\n- Job Branch: {analysis['job_branch']}\n- Template: {template_path.name}\n- Database: experience-bank-final.json\n- Positions: {len(db.get('experiences', []))}\n",
         encoding='utf-8'
     )
 
     print(f"✅ Resume generated: {out_file}")
     print(f"✅ Summary generated: {summary}")
+    print(f"📋 Job Branch: {analysis['job_branch']}")
+    print(f"🎯 Key Bullets: {', '.join(analysis['key_bullets'])}")
 
 
 if __name__ == '__main__':
