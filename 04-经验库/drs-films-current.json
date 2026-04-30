@@ -1,0 +1,36 @@
+{
+  "company": "DRS Films",
+  "role": "Founder & AI-Native Producer",
+  "period": "Jan 2026 — Present",
+  "location": "Greater New York Area",
+  "bullets": {
+    "default": [
+      {
+        "id": "drs-001",
+        "text": "Designed and deployed a multi-agent AI operating system orchestrating specialized agents across research, content development, knowledge curation, and deployment — coordinated through Discord, Obsidian, and Codex with rule-bound delegation and project memory."
+      },
+      {
+        "id": "drs-002",
+        "text": "Authored and directed 5 AI-native videos across multiple generation styles (live-action, anime, stop-motion) in under 4 weeks, integrating Runway, Higgsfield, Seedance 2.0, Midjourney, and ElevenLabs into a repeatable shot-development process spanning workflow, video, image, and audio; launched ai.drsfilms.com as a live portfolio of AI-native creative output."
+      },
+      {
+        "id": "drs-003",
+        "text": "Architected an automated content distribution layer for YouTube, Bilibili, LinkedIn, and RedNote — single asset, platform-specific tone and packaging, designed to reduce manual overhead in cross-platform creative releases."
+      },
+      {
+        "id": "drs-004",
+        "text": "Apply 15+ years of film and commercial production craft as the foundation for AI-native creative work — production logic, project evaluation frameworks, and quality judgment that AI tooling alone does not provide. Traditional portfolio archived at drsfilms.com."
+      }
+    ]
+  },
+  "selection_rules": {
+    "ai_research": ["drs-001", "drs-002", "drs-003"],
+    "gaming": ["drs-002", "drs-001", "drs-004"],
+    "production_ops": ["drs-004", "drs-002", "drs-003"],
+    "agency_pr": ["drs-003", "drs-002", "drs-004"],
+    "film": ["drs-004", "drs-002", "drs-001"],
+    "general": ["drs-001", "drs-002", "drs-004"]
+  },
+  "version": "1.3",
+  "next_review": "2026-06-01"
+}

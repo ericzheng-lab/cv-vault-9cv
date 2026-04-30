@@ -1,15 +1,75 @@
 #!/usr/bin/env python3
 """
-generate-cv.py - 简历生成工具 v6.0
-读 analysis.json，6 分支系统，生成定制 HTML 简历
+generate-cv.py - 简历生成工具 v7.0
+读 analysis.json，6 分支系统，DRS Films 从 JSON 读取，Profile 4 条结构（2 固定 + 2 LLM 动态）
 """
 
 import json
+import os
 import argparse
+import requests
 from pathlib import Path
 from datetime import datetime
 
 BASE = Path('/Users/drs/Documents/Obsidian-Vault/9_CV')
+DRS_FILMS_JSON = BASE / '04-经验库' / 'drs-films-current.json'
+
+API_URL = "https://gpt-agent.cc/v1/chat/completions"
+API_KEY = "sk-nrzn3BklQq52gemUnVizNQ3JDGjWu10vQTW0uQmMJO3zgHNx"
+
+# --- Fixed Profile sentences ---
+PROFILE_SENTENCE_1 = (
+    "Film and commercial producer with 15+ years of production experience, "
+    "now building at the intersection of traditional craft and AI-native systems."
+)
+PROFILE_SENTENCE_2 = (
+    "Led production on Final Frontier, an $8M+ feature-length documentary with "
+    "global distribution (Sundance, Berlinale, over 30 international festivals); "
+    "managed end-to-end production across commercial, documentary, and narrative formats."
+)
+
+# --- Fixed 6 Core Competencies ---
+CORE_COMPETENCIES = [
+    "AI-Native Production Systems",
+    "Multi-Agent Workflow Architecture",
+    "End-to-End Film & Commercial Production",
+    "Cross-Platform Content Distribution",
+    "International Co-Production & Festival Strategy",
+    "Budget & Timeline Management ($1M–$10M+)",
+]
+
+# --- Fallback sentences for when LLM fails ---
+FALLBACK_SENTENCE_3 = {
+    "ai_research": "Brings systems-level thinking to AI production workflows, with hands-on experience deploying multi-agent architectures for real creative outputs.",
+    "gaming": "Applies AI-native production methods to interactive and gaming contexts, bridging generative tools with narrative production logic.",
+    "production_ops": "Integrates AI workflow automation into production operations, reducing manual overhead while maintaining editorial quality standards.",
+    "agency_pr": "Leverages AI content distribution systems to scale campaign outputs across platforms without proportional increase in production overhead.",
+    "film": "Combines traditional film production discipline with AI-native creative tools, maintaining craft standards across both analog and generative workflows.",
+    "general": "Builds AI-augmented production systems that combine generative tooling with production craft for scalable, high-quality creative output.",
+}
+
+FALLBACK_SENTENCE_4 = {
+    "ai_research": "Production experience managing complex multi-stakeholder projects provides the operational rigor that pure research environments often lack.",
+    "gaming": "Cross-format production background (documentary, commercial, narrative) translates directly to managing complex, multi-asset gaming content pipelines.",
+    "production_ops": "End-to-end production management experience across budgets, timelines, and international co-productions maps directly to broadcast and streaming operations roles.",
+    "agency_pr": "Commercial production background managing client relationships, deliverables, and creative approvals mirrors the agency-client workflow.",
+    "film": "Festival circuit experience (Sundance, Berlinale, 30+ international) and distribution background provides direct relevance to independent film and acquisitions contexts.",
+    "general": "15+ years managing productions across documentary, commercial, and narrative formats provides a versatile operational foundation for complex creative projects.",
+}
+
+# --- Fixed core expertise and tools ---
+CORE_EXPERTISE = (
+    "Global Financing & Co-Production, Chain of Title & Legal Delivery, "
+    "Technical Post & 4.5K Mastering, AI Tool Integration, "
+    "Cross-Functional Leadership, Integrated Campaign Delivery, "
+    "Vendor & Talent Procurement, SOW & Margin Optimization"
+)
+
+TOOLS_SOFTWARE = (
+    "Movie Magic Budgeting & Scheduling, Jira (Power User), Asana, Monday.com, "
+    "frame.io, Adobe Creative Suite, Openclaw, Google Gemini, Midjourney, "
+    "Runway, Higgsfield, Veo, ElevenLabs"
+)
 
 
 def load_database():
@@ -17,140 +77,132 @@ def load_database():
         return json.load(f)
 
 
+def load_drs_films():
+    with open(DRS_FILMS_JSON, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def get_drs_bullets(job_type, drs_data):
+    """Select and order DRS Films bullets based on job_type."""
+    ids = drs_data["selection_rules"].get(job_type, drs_data["selection_rules"]["general"])
+    bullet_map = {b["id"]: b["text"] for b in drs_data["bullets"]["default"]}
+    return [bullet_map[bid] for bid in ids if bid in bullet_map]
+
+
 def parse_analysis_json(analysis_path):
     """读取 analysis.json"""
     with open(analysis_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
+
+    # Also try to get the original JD text if available
+    jd_text = data.get('jd_text', '')
+
     return {
         'job_branch': data['job_analysis']['branch'],
         'key_bullets': data['recommendations']['key_bullets'],
+        'jd_text': jd_text,
     }
 
 
-def generate_dynamic_content(job_branch):
-    """6 分支动态内容生成"""
+def generate_dynamic_profile_sentence(job_type, jd_text, sentence_num):
+    """
+    Use LLM to generate Profile sentence 3 or 4.
+    Returns (sentence, used_fallback: bool)
+    """
+    if sentence_num == 3:
+        instruction = f"""You are writing sentence 3 of a resume profile.
 
-    if job_branch == 'ai_research':
-        profile = [
-            ('AI-Creative Bridge', 'Award-winning Executive Producer with 15+ years at the intersection of cinematic storytelling and emerging technology. Produced Sundance and Berlinale-selected features while pioneering AI-powered production workflows.'),
-            ('Technical Production Expertise', 'Hands-on experience with generative AI tools (Openclaw, Gemini, Midjourney, Runway, Higgsfield, Veo) and ML-integrated pipelines. Proven ability to translate cutting-edge AI capabilities into professional film, TV, and VFX workflows.'),
-            ('Global Operations', 'Managed $2.5M+ budgets across international co-productions (China, France, Denmark, Qatar), navigating complex legal, censorship, and technical delivery requirements for Tier-1 theatrical and streaming platforms.')
-        ]
-        competencies = [
-            'AI & Generative Media Tools',
-            'Technical-Creative Translation',
-            'Research Environment Production',
-            'Global Co-Production & Financing',
-            'Award-Winning Content Development',
-            'Cross-Functional Team Leadership',
-            'Emerging Technology Integration',
-            'International Legal & Censorship',
-            'Executive Production Leadership'
-        ]
-        core_expertise = 'Global Financing & Co-Production, Chain of Title & Legal Delivery, Technical Post & 4.5K Mastering, AI Tool Integration, Cross-Functional Leadership, Integrated Campaign Delivery, Vendor & Talent Procurement, SOW & Margin Optimization'
-        tools_software = 'Movie Magic Budgeting & Scheduling, Jira (Power User), Asana, Monday.com, frame.io, Adobe Creative Suite, Openclaw, Google Gemini, Midjourney, Runway, Higgsfield, Veo'
+RULES:
+- Max 35 words
+- Start with a verb or noun, never "I"
+- One concrete idea per sentence, no list-packing
+- Mirror the JD's language, not generic AI buzzwords
+- No phrases like "passionate about", "leverage", "synergy"
 
-    elif job_branch == 'gaming':
-        profile = [
-            ('S-Tier Gaming Production', 'Executive Producer with extensive experience leading high-end CG and animation for top-tier gaming IP including Riot Games, Tencent, miHoYo, and NetEase.'),
-            ('Global Studio Orchestration', 'Directed multi-region vendor ecosystems across Europe, South America, and Asia, bridging creative ambition with production discipline for high-pressure game marketing campaigns.'),
-            ('Commercial-Technical Leadership', 'Owned complex scoping, budget, and delivery for premium game campaigns, aligning client expectations with studio execution across CG, animation, and post pipelines.')
-        ]
-        competencies = [
-            'Gaming & CG Animation',
-            'Global Vendor Management',
-            'Cross-Regional Production Leadership',
-            'High-End Campaign Delivery',
-            'Budgeting & SOW Negotiation',
-            'Creative-Technical Translation',
-            'Post & Asset Pipeline Oversight',
-            'Client Relationship Management',
-            'Executive Production Leadership'
-        ]
-        core_expertise = 'Gaming IP Production, CG Animation Pipeline, Global Vendor Orchestration, Budgeting & P&L Management, Cross-Functional Leadership, Integrated Campaign Delivery, Technical Post Oversight, Client Relationship Strategy'
-        tools_software = 'Jira, Asana, Monday.com, SyncSketch, frame.io, Adobe Creative Suite, Movie Magic Budgeting, Unreal Engine (familiar), Various AI Tools'
+GOOD EXAMPLES (sentence 3):
+[ai_research] "Deployed multi-agent production systems that generate, evaluate, and distribute AI-native video at scale — directly applicable to productionizing generative video and multimodal content pipelines."
+[agency_pr] "Built AI systems that accelerate awards-season asset production, media-targeted packaging, and multi-platform campaign distribution — reducing turnaround from days to hours."
+[production_ops] "Builds multi-agent systems and AI video workflows that streamline show scheduling, crew coordination, vendor tracking, and live-stream production support across complex venue operations."
 
-    elif job_branch == 'production_ops':
-        profile = [
-            ('Operations-Focused Production Leader', 'Executive Producer with deep expertise in production operations, workflow optimization, and cross-functional team leadership. Proven track record scaling creative operations for high-volume, multi-territory content pipelines.'),
-            ('Process & Pipeline Architecture', 'Engineered standardized production workflows across live-action, animation, and VFX. Implemented project management systems (Jira, Asana, Monday.com) that increased team efficiency and reduced delivery variance.'),
-            ('Global Resource Coordination', 'Managed distributed production teams across multiple time zones, orchestrating vendors, freelancers, and internal resources to deliver complex projects on scope, on time, and on budget.')
-        ]
-        competencies = [
-            'Production Operations & Workflow',
-            'Team Leadership & Development',
-            'Process Optimization & Scaling',
-            'Budgeting & P&L Management ($6M+)',
-            'Cross-Functional Coordination',
-            'Vendor & Talent Procurement',
-            'Project Management Systems',
-            'Risk Mitigation & QC',
-            'Executive Production Leadership'
-        ]
-        core_expertise = 'Production Operations, Workflow Architecture, Team Leadership, Budgeting & P&L Management, Cross-Functional Coordination, Vendor Management, Process Optimization, Risk Mitigation, Quality Control'
-        tools_software = 'Jira (Power User), Asana, Monday.com, Movie Magic Budgeting & Scheduling, frame.io, Adobe Creative Suite, ERP/Financial Workflows, Microsoft Office Suite'
+BAD EXAMPLES (do not write like this):
+- "Built multi-agent AI video pipelines and automated creative workflows that mirror DeepMind's need for scalable generative video systems, multimodal content tooling, and production-ready integration..." [too long, keyword-stuffing]
+- "From Sundance/Berlinale festival launches to an $8M+ feature documentary..." [repeats S2 content]
 
-    elif job_branch == 'agency_pr':
-        profile = [
-            ('Festival Strategy & Awards Campaign', 'Film producer and creative executive with 10+ years orchestrating award-winning content from concept to global release. Dual-selected at Sundance Film Festival and Berlinale, with deep fluency in festival strategy, awards campaigns, and prestige press positioning.'),
-            ('Client Leadership & Team Development', 'Seasoned production leader and client partner who has managed multi-million-dollar campaigns for global brands (Nike, Tencent, L\'Oréal) while building and mentoring high-performing teams. Adept at navigating complex client relationships and delivering on scope, time, and budget.'),
-            ('Media Relations & Cross-Cultural Storytelling', 'Bilingual entertainment strategist with a cultivated network spanning US, European, and Chinese media landscapes. Experience managing international press campaigns, coordinating red-carpet events, and leveraging press relationships for maximum impact.')
-        ]
-        competencies = [
-            'PR Campaign Strategy',
-            'Film Festival Strategy',
-            'Client Relations & Account Management',
-            'Media Outreach & Press Relations',
-            'Award Season Campaigning',
-            'Brand Partnerships & Co-Marketing',
-            'Talent & Team Management',
-            'Content Strategy & Narrative',
-            'Creative Direction & Innovation'
-        ]
-        core_expertise = 'PR Campaign Strategy, Film Festival Strategy, Client Relations, Media Outreach, Award Season Campaigning, Brand Partnerships, Talent Management, Content Strategy, Creative Direction, Cross-Cultural Communications'
-        tools_software = 'Jira, Asana, Monday.com, Adobe Creative Suite, Cision (familiar), Muck Rack (familiar), Microsoft Office Suite, Google Workspace, Social Media Management Tools'
+Job type: {job_type}
+Job description: {jd_text[:600]}
 
-    elif job_branch == 'film':
-        profile = [
-            ('Founder-Minded Builder & Operator', 'EMBA-educated Executive Producer with 15+ years of experience specialized in architecting 0-to-1 creative engines. Proven ownership in orchestrating $6M+ global portfolios and securing $2.5M+ in production financing through prestige international backing.'),
-            ('Multi-Format Pipeline Architecture', 'Engineered and scaled complex production workflows across live-action features, high-fidelity 3D animation, and VFX. Successfully translated the artistic rigor of international cinema into synchronized global delivery engines.'),
-            ('Global Compliance & Technical Delivery', 'Architected cross-border legal and financial frameworks, taking extreme ownership of multi-territory Chain of Title compliance. Directed global post-production pipelines to meet Tier-1 theatrical and digital delivery standards.')
-        ]
-        competencies = [
-            'Global Financing & Co-Production',
-            'Chain of Title & Legal Delivery',
-            'Technical Post & 4.5K Mastering',
-            'Festival Strategy & Awards Campaigns',
-            'Budgeting & P&L Management ($6M+)',
-            'Regulatory Affairs & Gov. Grants',
-            'Creative Workflow Optimization',
-            'Vendor & Talent Procurement',
-            'SOW & Margin Optimization'
-        ]
-        core_expertise = 'Global Financing & Co-Production, Chain of Title & Legal Delivery, Technical Post & 4.5K Mastering, Festival Strategy, Budgeting & P&L Management, Cross-Functional Leadership, Integrated Campaign Delivery, Vendor & Talent Procurement, SOW & Margin Optimization'
-        tools_software = 'Movie Magic Budgeting & Scheduling, Jira (Power User), Asana, Monday.com, frame.io, Adobe Creative Suite, ERP/Financial Workflows'
+Write ONE sentence only. Output the sentence directly, no quotes, no explanation."""
+    else:
+        instruction = f"""You are writing sentence 4 of a resume profile.
 
-    else:  # general
-        profile = [
-            ('Founder-Minded Builder & Operator', 'EMBA-educated Executive Producer with 15+ years of experience specialized in architecting 0-to-1 creative engines. Proven ownership in orchestrating $6M+ global portfolios and securing $2.5M+ in production financing through prestige international backing.'),
-            ('Multi-Format Pipeline Architecture', 'Engineered and scaled complex production workflows across live-action features, high-fidelity 3D animation, and VFX. Successfully translated the artistic rigor of international cinema into synchronized global delivery engines.'),
-            ('Global Compliance & Technical Delivery', 'Architected cross-border legal and financial frameworks, taking extreme ownership of multi-territory Chain of Title compliance. Directed global post-production pipelines to meet Tier-1 theatrical and digital delivery standards.')
-        ]
-        competencies = [
-            'Global Financing & Co-Production',
-            'Chain of Title & Legal Delivery',
-            'Technical Post & 4.5K Mastering',
-            'S-Tier Game IP & CG Animation',
-            'Budgeting & P&L Management ($6M+)',
-            'Regulatory Affairs & Gov. Grants',
-            'Creative Workflow Optimization',
-            'Vendor & Talent Procurement',
-            'SOW & Margin Optimization'
-        ]
-        core_expertise = 'Global Financing & Co-Production, Chain of Title & Legal Delivery, Technical Post & 4.5K Mastering, Budgeting & P&L Management, Cross-Functional Leadership, Integrated Campaign Delivery, Vendor & Talent Procurement, SOW & Margin Optimization'
-        tools_software = 'Movie Magic Budgeting & Scheduling, Jira (Power User), Asana, Monday.com, frame.io, Adobe Creative Suite, ERP/Financial Workflows'
+RULES:
+- Max 35 words
+- Start with a verb or noun, never "I"
+- One concrete idea per sentence, no list-packing
+- Mirror the JD's language, not generic AI buzzwords
+- No phrases like "passionate about", "leverage", "synergy"
+- Do NOT repeat what sentence 2 already said about Final Frontier
 
-    return profile, competencies, core_expertise, tools_software
+GOOD EXAMPLES (sentence 4):
+[ai_research] "Production background in high-stakes, multi-stakeholder projects — Sundance, Berlinale, international co-productions — provides the evaluation rigor and cross-functional coordination that research-to-product pipelines require."
+[agency_pr] "Film-release production background — managing talent, studios, deadlines, and deliverables across formats — maps directly to the client-facing, deadline-driven workflow of entertainment PR."
+[production_ops] "End-to-end production management across $8M+ budgets, international logistics, and broadcast-ready delivery provides direct operational fluency for large-scale live event and venue production."
+
+BAD EXAMPLES (do not write like this):
+- "Built multi-agent AI video pipelines and automated creative workflows that mirror DeepMind's need for scalable generative video systems, multimodal content tooling, and production-ready integration..." [too long, keyword-stuffing]
+- "From Sundance/Berlinale festival launches to an $8M+ feature documentary..." [repeats S2 content]
+
+Job type: {job_type}
+Job description: {jd_text[:600]}
+
+Write ONE sentence only. Output the sentence directly, no quotes, no explanation."""
+
+    try:
+        response = requests.post(
+            API_URL,
+            headers={
+                "Authorization": f"Bearer {API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "claude-opus-4-6",
+                "max_tokens": 200,
+                "messages": [{"role": "user", "content": instruction}],
+            },
+            timeout=30,
+        )
+        response.raise_for_status()
+        msg = response.json()["choices"][0]["message"]
+        # qwen3 thinking model may put content in reasoning field
+        text = (msg.get("content") or "").strip()
+        if not text:
+            reasoning = (msg.get("reasoning") or "").strip()
+            if reasoning:
+                # Strategy 1: find quoted sentence in reasoning
+                import re
+                quoted = re.findall(r'["\u201c]([A-Z][^"\u201d]{20,})["\u201d]', reasoning)
+                if quoted:
+                    text = quoted[-1].strip()
+                else:
+                    # Strategy 2: find last complete sentence (starts uppercase, ends with period)
+                    sentences = re.findall(r'([A-Z][^.!?\n]{15,}[.!?])', reasoning)
+                    if sentences:
+                        text = sentences[-1].strip()
+                    else:
+                        # Strategy 3: last non-empty line
+                        lines = [l.strip() for l in reasoning.split("\n") if l.strip() and len(l.strip()) > 15]
+                        if lines:
+                            text = lines[-1]
+        # Clean up any quotes the model might add
+        text = text.strip('"').strip("'").strip('*')
+        if len(text) > 10:
+            return text, False
+    except Exception as e:
+        print(f"⚠️ LLM call failed for sentence {sentence_num}: {e}")
+
+    # Fallback
+    fallback_map = FALLBACK_SENTENCE_3 if sentence_num == 3 else FALLBACK_SENTENCE_4
+    return fallback_map.get(job_type, fallback_map["general"]), True
 
 
 def score_bullet(bullet, recommended_ids):
@@ -189,36 +241,64 @@ def bullets_html(exp, recommended_ids, max_bullets=3):
     ])
 
 
+def drs_bullets_html(bullet_texts):
+    """Generate HTML for DRS Films bullets."""
+    return '\n'.join([
+        f'                    <li>{text}</li>'
+        for text in bullet_texts
+    ])
+
+
 def fill_template(template, analysis, db):
-    profile, competencies, core_expertise, tools_software = generate_dynamic_content(analysis['job_branch'])
+    job_type = analysis['job_branch']
+    jd_text = analysis.get('jd_text', '')
+
+    # --- Profile: 2 fixed + 2 dynamic ---
+    sentence_3, fallback_3 = generate_dynamic_profile_sentence(job_type, jd_text, 3)
+    sentence_4, fallback_4 = generate_dynamic_profile_sentence(job_type, jd_text, 4)
+
+    fallback_warnings = []
+    if fallback_3:
+        fallback_warnings.append("条3")
+    if fallback_4:
+        fallback_warnings.append("条4")
+
+    # --- DRS Films ---
+    drs_data = load_drs_films()
+    drs_bullet_texts = get_drs_bullets(job_type, drs_data)
 
     subtitle = 'Executive Producer | Global Creative Operations'
 
+    # --- Experience entries (from experience-bank, DRS Films handled separately) ---
     exps = db.get('experiences', [])
     while len(exps) < 6:
         exps.append({'title': '', 'company': '', 'period': '', 'master_bullets': [], 'extra_bullets': []})
 
     replacements = {
         '{{HEADER_SUBTITLE}}': subtitle,
-        '{{PROFILE_LABEL_1}}': profile[0][0],
-        '{{PROFILE_TEXT_1}}': profile[0][1],
-        '{{PROFILE_LABEL_2}}': profile[1][0],
-        '{{PROFILE_TEXT_2}}': profile[1][1],
-        '{{PROFILE_LABEL_3}}': profile[2][0],
-        '{{PROFILE_TEXT_3}}': profile[2][1],
-        '{{COMPETENCY_1}}': competencies[0],
-        '{{COMPETENCY_2}}': competencies[1],
-        '{{COMPETENCY_3}}': competencies[2],
-        '{{COMPETENCY_4}}': competencies[3],
-        '{{COMPETENCY_5}}': competencies[4],
-        '{{COMPETENCY_6}}': competencies[5],
-        '{{COMPETENCY_7}}': competencies[6],
-        '{{COMPETENCY_8}}': competencies[7],
-        '{{COMPETENCY_9}}': competencies[8],
-        '{{CORE_EXPERTISE}}': core_expertise,
-        '{{TOOLS_SOFTWARE}}': tools_software,
+        # Profile 4 sentences
+        '{{PROFILE_SENTENCE_1}}': PROFILE_SENTENCE_1,
+        '{{PROFILE_SENTENCE_2}}': PROFILE_SENTENCE_2,
+        '{{PROFILE_SENTENCE_3}}': sentence_3,
+        '{{PROFILE_SENTENCE_4}}': sentence_4,
+        # 6 Competencies (fixed)
+        '{{COMPETENCY_1}}': CORE_COMPETENCIES[0],
+        '{{COMPETENCY_2}}': CORE_COMPETENCIES[1],
+        '{{COMPETENCY_3}}': CORE_COMPETENCIES[2],
+        '{{COMPETENCY_4}}': CORE_COMPETENCIES[3],
+        '{{COMPETENCY_5}}': CORE_COMPETENCIES[4],
+        '{{COMPETENCY_6}}': CORE_COMPETENCIES[5],
+        # Skills
+        '{{CORE_EXPERTISE}}': CORE_EXPERTISE,
+        '{{TOOLS_SOFTWARE}}': TOOLS_SOFTWARE,
+        # DRS Films entry (always first)
+        '{{DRS_TITLE}}': drs_data['role'],
+        '{{DRS_DATE}}': drs_data['period'],
+        '{{DRS_COMPANY}}': f"{drs_data['company']} | {drs_data['location']}",
+        '{{DRS_BULLETS}}': drs_bullets_html(drs_bullet_texts),
     }
 
+    # --- Other job entries ---
     for i, exp in enumerate(exps[:6], start=1):
         replacements[f'{{{{JOB{i}_TITLE}}}}'] = exp.get('title', '')
         replacements[f'{{{{JOB{i}_DATE}}}}'] = exp.get('period', '')
@@ -240,7 +320,11 @@ def fill_template(template, analysis, db):
     replacements['{{GENERATION_INFO}}'] = f'''
 <!-- 
 Generated: {datetime.now().isoformat()}
-Job Branch: {analysis['job_branch']}
+Job Branch: {job_type}
+DRS Films Version: {drs_data["version"]}
+DRS Bullets: {", ".join(drs_data["selection_rules"].get(job_type, drs_data["selection_rules"]["general"]))}
+Profile S3 Fallback: {fallback_3}
+Profile S4 Fallback: {fallback_4}
 Database: experience-bank-final.json
 Template: resume-template-master-locked.html
 -->
@@ -248,11 +332,12 @@ Template: resume-template-master-locked.html
 
     for old, new in replacements.items():
         template = template.replace(old, new)
-    return template
+
+    return template, fallback_warnings
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate CV from master-locked template')
+    parser = argparse.ArgumentParser(description='Generate CV v7.0 — DRS Films JSON + dynamic Profile')
     parser.add_argument('--analysis', '-a', required=True, help='Path to analysis.json')
     parser.add_argument('--output', '-o', required=True, help='Output directory')
     args = parser.parse_args()
@@ -261,25 +346,56 @@ def main():
     out_dir = Path(args.output)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    print("📊 Loading database...")
     db = load_database()
+
+    print("📄 Loading DRS Films data...")
+    drs_data = load_drs_films()
+    print(f"   DRS Films v{drs_data['version']}: {len(drs_data['bullets']['default'])} bullets, {len(drs_data['selection_rules'])} rules")
+
+    print("🔍 Parsing analysis...")
     analysis = parse_analysis_json(analysis_path)
+    job_type = analysis['job_branch']
+    print(f"   Branch: {job_type}")
+
+    print("🎨 Generating Profile sentences 3 & 4 via LLM...")
     template_path = BASE / '01-MASTER' / 'resume-template-master-locked.html'
     template = template_path.read_text(encoding='utf-8')
-    result = fill_template(template, analysis, db)
+    result, fallback_warnings = fill_template(template, analysis, db)
 
     out_file = out_dir / 'resume.html'
     out_file.write_text(result, encoding='utf-8')
 
+    # Summary
+    drs_ids = drs_data["selection_rules"].get(job_type, drs_data["selection_rules"]["general"])
+    summary_text = f"""# 生成摘要
+
+- 时间: {datetime.now().isoformat()}
+- Job Branch: {job_type}
+- Template: {template_path.name}
+- Database: experience-bank-final.json
+- DRS Films Version: {drs_data['version']}
+- DRS Bullets Selected: {', '.join(drs_ids)}
+- Profile S3 Fallback: {'Yes' if fallback_warnings and '条3' in fallback_warnings else 'No'}
+- Profile S4 Fallback: {'Yes' if fallback_warnings and '条4' in fallback_warnings else 'No'}
+- Positions: {len(db.get('experiences', []))} + DRS Films
+"""
+
     summary = out_dir / 'generation-summary.md'
-    summary.write_text(
-        f"# 生成摘要\n\n- 时间: {datetime.now().isoformat()}\n- Job Branch: {analysis['job_branch']}\n- Template: {template_path.name}\n- Database: experience-bank-final.json\n- Positions: {len(db.get('experiences', []))}\n",
-        encoding='utf-8'
-    )
+    summary.write_text(summary_text, encoding='utf-8')
 
     print(f"✅ Resume generated: {out_file}")
     print(f"✅ Summary generated: {summary}")
-    print(f"📋 Job Branch: {analysis['job_branch']}")
+    print(f"📋 Job Branch: {job_type}")
+    print(f"🏢 DRS Films bullets: {', '.join(drs_ids)}")
     print(f"🎯 Key Bullets: {', '.join(analysis['key_bullets'])}")
+
+    if fallback_warnings:
+        warning = f"⚠️ Profile 动态生成失败（{'、'.join(fallback_warnings)}），已使用备用文案 [{job_type}]"
+        print(warning)
+        return warning  # For pipeline-runner to forward to Discord
+
+    return None
 
 
 if __name__ == '__main__':

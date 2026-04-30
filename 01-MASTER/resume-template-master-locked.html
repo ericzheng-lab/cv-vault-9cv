@@ -271,10 +271,13 @@
             <h1>Eric Zheng</h1>
             <h2>{{HEADER_SUBTITLE}}</h2>
             <div class="contact-line">
-                Greater New York Area <span class="separator">|</span>
+                Greater NY <span class="separator">|</span>
+                U.S. Permanent Resident <span class="separator">|</span>
+                Available Immediately<br>
                 <a href="mailto:eric.zheng@drsfilms.com">eric.zheng@drsfilms.com</a> <span class="separator">|</span>
-                <a href="https://www.drsfilms.com" target="_blank">www.drsfilms.com</a> <span class="separator">|</span>
-                US Permanent Resident
+                <a href="https://www.linkedin.com/in/ericzheng" target="_blank">linkedin</a> <span class="separator">|</span>
+                <a href="https://www.drsfilms.com" target="_blank">drsfilms.com</a> <span class="separator">|</span>
+                <a href="https://ai.drsfilms.com" target="_blank">ai.drsfilms.com</a>
             </div>
         </header>
 
@@ -282,9 +285,10 @@
         <section>
             <h3>Executive Profile</h3>
             <ul class="profile-list">
-                <li><strong>{{PROFILE_LABEL_1}}:</strong> {{PROFILE_TEXT_1}}</li>
-                <li><strong>{{PROFILE_LABEL_2}}:</strong> {{PROFILE_TEXT_2}}</li>
-                <li><strong>{{PROFILE_LABEL_3}}:</strong> {{PROFILE_TEXT_3}}</li>
+                <li>{{PROFILE_SENTENCE_1}}</li>
+                <li>{{PROFILE_SENTENCE_2}}</li>
+                <li>{{PROFILE_SENTENCE_3}}</li>
+                <li>{{PROFILE_SENTENCE_4}}</li>
             </ul>
         </section>
 
@@ -298,15 +302,26 @@
                 <div class="competency-item">{{COMPETENCY_4}}</div>
                 <div class="competency-item">{{COMPETENCY_5}}</div>
                 <div class="competency-item">{{COMPETENCY_6}}</div>
-                <div class="competency-item">{{COMPETENCY_7}}</div>
-                <div class="competency-item">{{COMPETENCY_8}}</div>
-                <div class="competency-item">{{COMPETENCY_9}}</div>
             </div>
         </section>
 
         <!-- Professional Experience -->
         <section>
             <h3>Professional Experience</h3>
+
+            <!-- DRS Films (always first) -->
+            <div class="job-entry">
+                <div class="job-header-row">
+                    <div class="role-title">{{DRS_TITLE}}</div>
+                    <div class="date-range">{{DRS_DATE}}</div>
+                </div>
+                <div class="company-row">
+                    <span class="company-name">{{DRS_COMPANY}}</span>
+                </div>
+                <ul class="exp-list">
+                    {{DRS_BULLETS}}
+                </ul>
+            </div>
 
             <!-- Job 1 -->
             <div class="job-entry">

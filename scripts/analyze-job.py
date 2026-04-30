@@ -64,13 +64,19 @@ def analyze_job_branch_llm(jd_text):
     """
     prompt = """You are a job classification expert. Read this job description and classify it into exactly one branch: ai_research, gaming, production_ops, agency_pr, film, general.
 
-Definitions:
-- ai_research: AI/ML/tech company, research environment, requires AI tool experience
-- gaming: gaming IP, CG animation, game marketing
-- production_ops: live events, physical production, venue/entertainment operations
-- agency_pr: PR agency, media relations, film festival campaigns, client-facing publicity
-- film: independent film, festival circuit, theatrical distribution
-- general: everything else
+将职位严格分类为以下六个分支之一。每个分支有排他性特征，必须符合才能归入。
+
+- ai_research：JD 明确涉及 AI/ML 技术研发、模型训练、算法研究；公司主营业务是科技/AI，不是内容公司。
+- gaming：公司核心业务是游戏（电子游戏、电竞），不是泛指 entertainment。
+- production_ops：电视台、流媒体平台的节目制作运营管理（如 ABC、Netflix、Hulu 内部制作部门），或大型场馆/现场娱乐的制作运营（如 MSG、Live Nation）；涉及 show production、broadcast operations、live event production management 等。
+- agency_pr：PR 公关机构或品牌代理；涉及 media relations、client management、press campaigns、awards campaigns、influencer relations。
+- film：独立电影行业，电影节，艺术影院发行；不是电视，不是流媒体内容运营。
+- general：以上均不符合时使用此兜底。不确定时不走 production_ops，走 general。
+
+重要规则：
+- production_ops 不是通用娱乐行业兜底，只适用于电视/流媒体内容制作运营。
+- "entertainment company"本身不触发 production_ops，需要有具体的 show production / broadcast 关键词。
+- 宁可走 general，不要错走 production_ops。
 
 Return ONLY valid JSON, no other text:
 {"branch": "...", "confidence": 0-100, "reason": "one sentence"}
@@ -219,6 +225,7 @@ def generate_analysis_report(jd_content, db):
             'branch_score': branch[1],
             'categories': categories,
         },
+        'jd_text': jd_content[:1500],
         'matched_bullets': bullet_matches,
         'strategy': strategy,
         'recommendations': {
